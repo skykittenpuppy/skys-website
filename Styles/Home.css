@@ -1,0 +1,77 @@
+* {
+	--light-red: #ffb8cd;
+	--light-orange: #ffe592;
+	--light-yellow: #ffeba7;
+	--light-green: #efffb1;
+	--light-blue: #b5fff9;
+	--light-purple: #d4bbff;
+	--light-white: #ffffff;
+	--dark-red: #e67092;
+	--dark-orange: #e4a872;
+	--dark-yellow: #e4c864;
+	--dark-green: #cce56b;
+	--dark-blue: #6de6dd;
+	--dark-purple: #9d75e3;
+	--dark-white: #dddddd;
+}
+html {
+	color: var(--dark-purple, #9d75e3);
+	background: var(--light-purple, #d4bbff);
+	text-align: center;
+}
+a {
+	color: var(--light-blue, #b5fff9);
+}
+h1 {
+	margin: 0px;
+}
+h3 {
+	margin: 0px;
+}
+hr.dashed {
+	border: none;
+	border-top: 4px dashed var(--light-red, #ffb8cd);
+}
+hr.minimal {
+	border: none;
+	border-top: 4px dotted var(--light-red, #ffb8cd);
+}
+
+header{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 32px;
+}
+header img{
+	width: 10%;
+}
+
+main {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+	padding: 0px 16px;
+	gap: 16px;
+}
+main img{
+	min-width: 200px;
+	max-width: 30%;
+	flex-basis: 30%;
+}
+main p{
+	flex-basis: 60%;
+}
+
+footer div {
+	padding: 0px 16px;
+}
+
+.badges a{
+	text-decoration: none;
+}
+.badges img{
+	height: 31px;
+	width: 88px;
+}
