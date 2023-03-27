@@ -14,10 +14,15 @@
 	--dark-purple: #9d75e3;
 	--dark-white: #dddddd;
 }
+@font-face {
+	font-family: "Dafont";
+    src: url(../Images/Nice\ Sugar.ttf) format("truetype");
+}
 html {
 	color: var(--dark-purple, #9d75e3);
 	background: var(--light-purple, #d4bbff);
 	text-align: center;
+    font-family: "Dafont", sans-serif;
 }
 a {
 	color: var(--light-blue, #b5fff9);
@@ -45,6 +50,7 @@ header{
 }
 header img{
 	width: 10%;
+	max-width: 128px;
 }
 
 main {
