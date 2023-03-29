@@ -88,6 +88,21 @@
 
     document.body.appendChild(nekoEl);
 
+	function bindIFrameMousemove(iframe){
+		iframe.contentWindow.addEventListener('mousemove', function(event) {
+			var clRect = iframe.getBoundingClientRect();
+			var evt = new CustomEvent('mousemove', {bubbles: true, cancelable: false});
+	
+			evt.clientX = event.clientX + clRect.left;
+			evt.clientY = event.clientY + clRect.top;
+	
+			iframe.dispatchEvent(evt);
+		});
+	};
+
+	bindIFrameMousemove(document.getElementById("Header"));
+	bindIFrameMousemove(document.getElementById("Footer"));
+
     document.onmousemove = (event) => {
       mousePosX = event.clientX;
       mousePosY = event.clientY;

@@ -1,0 +1,61 @@
+* {
+	--light-red: #ffb8cd;
+	--light-orange: #ffe592;
+	--light-yellow: #ffeba7;
+	--light-green: #efffb1;
+	--light-blue: #b5fff9;
+	--light-purple: #d4bbff;
+	--light-white: #ffffff;
+	--dark-red: #e67092;
+	--dark-orange: #e4a872;
+	--dark-yellow: #e4c864;
+	--dark-green: #cce56b;
+	--dark-blue: #6de6dd;
+	--dark-purple: #9d75e3;
+	--dark-white: #dddddd;
+}
+@font-face {
+	font-family: "Dafont";
+    src: url(../Images/Nice\ Sugar.ttf) format("truetype");
+}
+html {
+	color: var(--dark-purple, #9d75e3);
+	background: var(--light-purple, #d4bbff);
+	text-align: center;
+    font-family: "Dafont", sans-serif;
+}
+a {
+	color: var(--light-blue, #b5fff9);
+}
+h1,
+h2,
+h3 {
+	margin: 0px;
+}
+
+header iframe {
+	width: 100%;
+	height: 150px;
+	border: none;
+}
+footer iframe {
+	width: 100%;
+	height: 190px;
+	border: none;
+}
+hr.dashed {
+	border: none;
+	border-top: 4px dashed var(--light-red, #ffb8cd);
+}
+hr.minimal {
+	border: none;
+	border-top: 4px dotted var(--light-red, #ffb8cd);
+}
+
+.badges a{
+	text-decoration: none;
+}
+.badges img{
+	height: 31px;
+	width: 88px;
+}

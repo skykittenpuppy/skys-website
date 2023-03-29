@@ -1,0 +1,21 @@
+ul{
+	list-style-type: none;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 16px;
+}
+li{
+	display: flex;
+	background-color: var(--light-red);
+	border: 5px solid var(--dark-red);
+	border-radius: 32px;
+	padding: 16px;
+	gap: 16px;
+	text-align: left;
+}
+li img{
+	border-radius: 8px;
+	width: 25%;
+	aspect-ratio: 16/9;
+	align-self: center;
+}
