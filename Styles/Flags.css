@@ -1,4 +1,5 @@
 ul{
+	padding-inline: 16px;
 	list-style-type: none;
 	display: grid;
 	grid-template-columns: 1fr 1fr;
@@ -18,4 +19,17 @@ li img{
 	width: 25%;
 	aspect-ratio: 16/9;
 	align-self: center;
+}
+blockquote{
+	margin: 0;
+}
+details{
+	user-select: none;
+	padding-block: 4px;
+}
+summary{
+	display: flex;
+	justify-content: center;
+	border-bottom: 2px solid var(--dark-purple);
+	border-radius: 8px;
 }
