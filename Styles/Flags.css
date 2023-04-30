@@ -23,6 +23,16 @@ li img{
 blockquote{
 	margin: 0;
 }
+
+li.elipses{
+	background-color: #211;
+	border: 5px solid #d11;
+	color: #a11;
+}
+li.elipses a{
+	color: #d11;
+}
+
 details{
 	user-select: none;
 	padding-block: 4px;
