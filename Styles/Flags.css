@@ -2,13 +2,13 @@ ul{
 	padding-inline: 16px;
 	list-style-type: none;
 	display: grid;
-	grid-template-columns: 1fr 1fr;
+	grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
 	gap: 16px;
 }
 li{
 	display: flex;
-	background-color: var(--light-red);
-	border: 5px solid var(--dark-red);
+	background-color: var(--cat-light-pink);
+	border: 5px solid var(--cat-pink);
 	border-radius: 32px;
 	padding: 16px;
 	gap: 16px;
@@ -40,6 +40,6 @@ details{
 summary{
 	display: flex;
 	justify-content: center;
-	border-bottom: 2px solid var(--dark-purple);
+	border-bottom: 2px solid var(--cat-dark-purple);
 	border-radius: 8px;
 }
