@@ -46,11 +46,3 @@ hr.minimal {
 	border: none;
 	border-top: 4px dotted var(--cat-light-pink);
 }
-
-.badges a{
-	text-decoration: none;
-}
-.badges img{
-	height: 31px;
-	width: 88px;
-}
