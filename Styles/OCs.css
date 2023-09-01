@@ -41,23 +41,30 @@ li{
 	grid-row: span 2;
 }
 
-.description{
-	min-width: min-content;
+.title{
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: flex-start;
 }
 .name{
 	font-size: 2rem;
+	color: var(--OC-accent);
 	text-decoration: underline;
 }
-.title{
-	display: block;
+.credit{
 	font-size: 1.5rem;
-	text-decoration: underline;
-	width: max-content;
+}
+.pronouns{
+	font-size: 1rem;
+}
+.description{
+	min-width: min-content;
 }
 
 .kit{
-	color: #86a2ec;
+	--OC-accent: #86a2ec;
 }
 .mindy{
-	color: #4ea699;
+	--OC-accent: #4ea699;
 }
