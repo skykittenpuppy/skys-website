@@ -1,27 +1,33 @@
 * {
-	--cat-black: #000000;
-	--cat-purple: #ac85f3;
-	--cat-dark-purple: #7847e6;
-	--cat-blue: #86a2ec;
-	--cat-light-blue: #b3d3f7;
-	--cat-pink: #f099dd;
-	--cat-light-pink: #febcdd;
-	--cat-yellow: #fdf1ae;
-	--cat-white: #ffffff;
+	--light-cat-purple: #ac85f3;
+	--light-cat-dark-purple: #7847e6;
+	--light-cat-blue: #86a2ec;
+	--light-cat-light-blue: #b3d3f7;
+	--light-cat-pink: #f099dd;
+	--light-cat-light-pink: #febcdd;
+	--light-cat-yellow: #fdf1ae;
+
+	--dark-cat-purple: #450b62;
+	--dark-cat-dark-purple: #210849;
+	--dark-cat-blue: #185f92;
+	--dark-cat-light-blue: #3ab9a4;
+	--dark-cat-pink: #872155;
+	--dark-cat-light-pink: #da4565;
+	--dark-cat-yellow: #ffd0a7;
 }
 @font-face {
 	font-family: "Dafont";
     src: url(../Images/Nice\ Sugar.ttf) format("truetype");
 }
 html {
-	color: var(--cat-dark-purple);
-	background: var(--cat-purple);
+	color: var(--light-cat-dark-purple);
+	background: var(--light-cat-purple);
 	text-align: center;
     font-family: "Dafont", sans-serif;
 }
 a {
-	color: var(--cat-light-blue);
-	text-shadow: 0 0 0.5ch var(--cat-dark-purple);
+	color: var(--light-cat-light-blue);
+	text-shadow: 0 0 0.5ch var(--light-cat-dark-purple);
 }
 h1,
 h2,
@@ -40,9 +46,9 @@ footer iframe {
 }
 hr.dashed {
 	border: none;
-	border-top: 4px dashed var(--cat-light-pink);
+	border-top: 4px dashed var(--light-cat-light-pink);
 }
 hr.minimal {
 	border: none;
-	border-top: 4px dotted var(--cat-light-pink);
+	border-top: 4px dotted var(--light-cat-light-pink);
 }

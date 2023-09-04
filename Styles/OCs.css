@@ -7,8 +7,8 @@ ul{
 	gap: 16px;
 }
 li{
-	background-color: var(--cat-light-pink);
-	border: 5px solid var(--cat-pink);
+	background-color: var(--light-cat-light-pink);
+	border: 5px solid var(--light-cat-pink);
 	border-radius: 32px;
 	padding: 16px;
 	text-align: left;
@@ -26,17 +26,37 @@ li{
 	max-width: 400px;
 }
 .gallery img{
-	object-fit: contain;
-	border-radius: 6px;
 	max-height: 100%;
 	max-width: 100%;
+	vertical-align: middle;
+}
+.gallery figure{
+	overflow: hidden;
+	border-radius: 6px;
+	margin: 0;
+}
+.gallery figure figcaption{
+	position: relative;
+	margin-top: -2em;
+	padding: 0.5em;
+	height: 1em;
+	z-index: 1;
+	background: rgba(33, 8, 73, 0.75);
+	backdrop-filter: blur(4px);
+	border-radius: 0;
+	opacity: 0;
+	transition: all 0.1s;
+	text-align: left;
+}
+.gallery figure:hover figcaption{
+	opacity: 1;
 }
 .triple{
 	grid-template-columns: auto auto;
 	grid-template-rows: auto auto auto;
 	gap: 6px;
 }
-.triple > img:first-child{
+.triple > *:first-child{
 	grid-column: span 2;
 	grid-row: span 2;
 }

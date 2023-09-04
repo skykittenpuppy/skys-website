@@ -7,8 +7,8 @@ ul{
 }
 li{
 	display: flex;
-	background-color: var(--cat-light-pink);
-	border: 5px solid var(--cat-pink);
+	background-color: var(--light-cat-light-pink);
+	border: 5px solid var(--light-cat-pink);
 	border-radius: 32px;
 	padding: 16px;
 	gap: 16px;
@@ -40,6 +40,6 @@ details{
 summary{
 	display: flex;
 	justify-content: center;
-	border-bottom: 2px solid var(--cat-dark-purple);
+	border-bottom: 2px solid var(--light-cat-dark-purple);
 	border-radius: 8px;
 }
