@@ -47,6 +47,7 @@ li{
 	opacity: 0;
 	transition: all 0.1s;
 	text-align: left;
+	color: var(--light-cat-pink);
 }
 .gallery figure:hover figcaption{
 	opacity: 1;
