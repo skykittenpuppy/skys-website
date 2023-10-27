@@ -25,15 +25,16 @@ li{
 	min-width: 400px;
 	max-width: 400px;
 }
-.gallery img{
-	max-height: 100%;
-	max-width: 100%;
-	vertical-align: middle;
-}
 .gallery figure{
 	overflow: hidden;
 	border-radius: 6px;
 	margin: 0;
+}
+.gallery figure img{
+	height: 100%;
+	width: 100%;
+	vertical-align: middle;
+	object-fit: cover;
 }
 .gallery figure figcaption{
 	position: relative;
@@ -88,4 +89,7 @@ li{
 }
 .mindy{
 	--OC-accent: #4ea699;
+}
+.celeste{
+	--OC-accent: #2c2d66;
 }
