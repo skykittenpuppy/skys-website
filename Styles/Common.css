@@ -39,16 +39,14 @@ p {
 header iframe {
 	width: 100%;
 	border: none;
+	overflow: visible;
 }
 footer iframe {
 	width: 100%;
 	border: none;
+	overflow: visible;
 }
-hr.dashed {
-	border: none;
-	border-top: 4px dashed var(--light-cat-light-pink);
-}
-hr.minimal {
+hr {
 	border: none;
 	border-top: 4px dotted var(--light-cat-light-pink);
 }

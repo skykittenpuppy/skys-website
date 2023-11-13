@@ -7,36 +7,28 @@ ul{
 	gap: 16px;
 }
 li{
-	display: flex;
+	display: grid;
 	background-color: var(--light-cat-light-pink);
 	border: 5px solid var(--light-cat-pink);
 	border-radius: 32px;
+	grid-template-columns: min(256px, 20%) 1fr;
 	padding: 16px;
 	text-align: left;
-	flex-direction: row;
 	min-width: fit-content;
 	gap: 12px;
 }
-
-.gallery{
-	border-radius: 12px;
-	overflow: hidden;
-	display: grid;
-	min-width: 400px;
-	max-width: 400px;
-}
-.gallery figure{
+figure{
 	overflow: hidden;
 	border-radius: 6px;
 	margin: 0;
 }
-.gallery figure img{
+figure img{
 	height: 100%;
 	width: 100%;
 	vertical-align: middle;
 	object-fit: cover;
 }
-.gallery figure figcaption{
+figure figcaption{
 	position: relative;
 	margin-top: -2em;
 	padding: 0.5em;
@@ -50,17 +42,8 @@ li{
 	text-align: left;
 	color: var(--light-cat-pink);
 }
-.gallery figure:hover figcaption{
+figure:hover figcaption{
 	opacity: 1;
-}
-.triple{
-	grid-template-columns: auto auto;
-	grid-template-rows: auto auto auto;
-	gap: 6px;
-}
-.triple > *:first-child{
-	grid-column: span 2;
-	grid-row: span 2;
 }
 
 .title{
@@ -75,9 +58,6 @@ li{
 	text-decoration: underline;
 	filter: drop-shadow(0 0 1px black);
 }
-.credit{
-	font-size: 1.5rem;
-}
 .pronouns{
 	font-size: 1rem;
 }
@@ -85,9 +65,18 @@ li{
 	min-width: min-content;
 }
 
-.kit{
-	--OC-accent: #86a2ec;
+.hannah{
+	--OC-accent: #9c72ea;
 }
-.mindy{
-	--OC-accent: #4ea699;
+.hazel{
+	--OC-accent: #f6a5dc;
+}
+.ramiel{
+	--OC-accent: #4a405c;
+}
+.eclipse{
+	--OC-accent: #22007a;
+}
+.pet{
+	--OC-accent: #ca4044;
 }
