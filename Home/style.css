@@ -1,3 +1,4 @@
+
 html {
     width: 100%;
     height: 100%;
@@ -9,11 +10,94 @@ html {
     background-size: cover;
 }
 body {
+    scale: 300%;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-height: 60%;
-    width: 60%;
+    /*min-height: 60%;
+    width: 60%;*/
+}
 
-    background-color: gray;
+.musicPlayer{
+    --thumb-size: 64px;
+    --play-size: 32px;
+    --title-size: 256px;
+    --thumb-radius: 8px;
+    --grid-padding: 8px;
+    --player-bg: black;
+    --player-text: white;
+    --player-accent: aqua;
+    --volume-value: 1%;
+
+    display: grid;
+    grid-template-areas: 
+        "thumb embed title title"
+        "thumb embed play volume";
+    grid-template-columns: var(--thumb-size) 0px var(--play-size) calc(var(--title-size) - var(--play-size));
+    grid-template-rows: calc(var(--thumb-size) - var(--play-size) - calc(var(--grid-padding) / 2)) var(--play-size);
+    padding: var(--grid-padding);
+    gap: calc(var(--grid-padding) / 2);
+    background-color: var(--player-bg);
+    color: var(--player-text);
+    border-radius: calc(var(--grid-padding) + var(--thumb-radius));
+}
+
+#link {
+    grid-area: thumb;
+    justify-self: center;
+    align-self: center;
+    height: 100%;
+    width: 100%;
+    border-radius: var(--thumb-radius);
+    overflow: hidden;
+}
+#thumb {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
+#title {
+    grid-area: title;
+    justify-self: start;
+    align-self: center;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+#playpause {
+    grid-area: play;
+    justify-self: center;
+    align-self: center;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    border: 0;
+    mask-size: var(--play-size);
+    mask-repeat: no-repeat !important;
+    mask-position: center;
+}
+.play {
+    background-color: var(--player-text);;
+    mask: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNMTIgMGMtNi42MjcgMC0xMiA1LjM3My0xMiAxMnM1LjM3MyAxMiAxMiAxMiAxMi01LjM3MyAxMi0xMi01LjM3My0xMi0xMi0xMnptLTMgMTh2LTEybDEwIDYtMTAgNnoiLz48L3N2Zz4=");
+}
+.pause {
+    background-color: var(--player-text);;
+    mask: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNMTIgMGMtNi42MjcgMC0xMiA1LjM3My0xMiAxMnM1LjM3MyAxMiAxMiAxMiAxMi01LjM3MyAxMi0xMi01LjM3My0xMi0xMi0xMnptLTEgMTdoLTN2LTEwaDN2MTB6bTUgMGgtM3YtMTBoM3YxMHoiLz48L3N2Zz4=");
+}
+#volume {
+    grid-area: volume;
+    justify-self: start;
+    align-self: center;
+    width: 100%;
+    appearance: none;
+    background: linear-gradient(to right, var(--player-accent) 0% var(--volume-value), var(--player-text) var(--volume-value) 100%);
+    accent-color: var(--player-accent);
+    border-radius: 100px;
+    height: 8px;
+}
+#ytplayer {
+    grid-area: embed;
+    display: none;
 }

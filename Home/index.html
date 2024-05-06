@@ -4,10 +4,20 @@
         <title>welcome</title>
         <link rel="icon" type="image/x-icon" href="Images/Favicon.png">
         <link rel="stylesheet" href="style.css">
+        <script async src="https://www.youtube.com/iframe_api"></script>
+        <script defer src="musicPlayer.js"></script>
     </head>
 
     <body>
-        <h1>temporary content</h1>
-        <iframe style="border: 0; width: 400px; height: 340px;" src="https://bandcamp.com/EmbeddedPlayer/album=3436192485/size=large/bgcol=333333/linkcol=9a64ff/artwork=small/transparent=true/" seamless><a href="https://femtanyl.bandcamp.com/album/chaser">CHASER by Femtanyl</a></iframe>
+        <b style="color: red;">Under Construction.</b>
+        <span class="musicPlayer">
+            <a     id="link">
+                <img   id="thumb" src="../Images/cloud.PNG"/>
+            </a>
+            <p     id="title">Loading...</p>
+            <input id="playpause" type="button" class="play"/>
+            <input id="volume" type="range" min="0" max="100" step="5" value="0"/>
+            <div   id="ytplayer"></div>
+        </span>
     </body>
 </html>
