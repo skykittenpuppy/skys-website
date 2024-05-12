@@ -1,0 +1,26 @@
+html {
+    background-image: url("../Resources/cloud.PNG");
+    background-position: left;
+    background-size: cover;
+    overflow: hidden;
+}
+body {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+}
+
+.musicPlayer {
+    position: absolute;
+    top: 16px;
+    right: 0;
+}
+
+.warn {
+    text-shadow: black 1px 1px 2px;
+    font-size: xx-large;
+    color: red;
+}
