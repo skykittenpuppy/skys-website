@@ -1,6 +1,6 @@
 @font-face {
-    font-family: "media-icons";
-    src: url("../Resources/media-icons.ttf") format("truetype");
+    font-family: "icons";
+    src: url("../Resources/icons.ttf") format("truetype");
 }
 
 .musicPlayer {
@@ -15,26 +15,28 @@
     --player-text:   rgba(255, 255, 255, 1.0);
     --player-accent: rgba(172,   0, 172, 1.0);
 
-    --right-overflow: 32px;
+    --overflow: 32px;
 
     overflow: hidden;
-    margin-right: calc(-1 * calc(var(--right-overflow) + calc(var(--player-padding) / 2)));
-    width: calc(var(--player-width) + var(--right-overflow));
     padding: var(--player-padding);
+    padding-top: calc(1 * calc(var(--overflow) + var(--player-padding) + calc(var(--player-padding) / 2)));
+    padding-right: calc(1 * calc(var(--overflow) + var(--player-padding) + calc(var(--player-padding) / 2)));
+    margin-top: calc(-1 * calc(var(--overflow) + calc(var(--player-padding) / 2)));
+    margin-right: calc(-1 * calc(var(--overflow) + calc(var(--player-padding) / 2)));
+    width: var(--player-width);
 
     display: grid;
     grid-template-areas:
-        "thumb embed info info blank"
-        "thumb embed buttons volume blank";
-    grid-template-columns: var(--thumb-size) 0px auto 1fr var(--right-overflow);
+        "thumb embed info    info  "
+        "thumb embed buttons volume";
+    grid-template-columns: var(--thumb-size) 0px auto 1fr;
     grid-template-rows: calc(var(--thumb-size) - var(--button-height) - calc(var(--player-padding) / 2)) var(--button-height);
     gap: calc(var(--player-padding) / 2);
 
     color: var(--player-text);
     background-color: var(--player-bg);
-    backdrop-filter: blur(8px) brightness(88%);
+    backdrop-filter: blur(8px);
 
-    border-top-left-radius: var(--player-radius);
     border-bottom-left-radius: var(--player-radius);
     box-shadow:
         inset 0 0 3px 0px rgba(255, 255, 255, 0.4), /* internal highlight */
@@ -42,7 +44,6 @@
         inset 0 0 3px 5px rgba(  0,   0,   0, 0.1), /* internal shadow */
           2px 2px 4px 3px rgba(  0,   0,   0, 0.3); /* external shadow */
 }
-
 .musicPlayer:before {
     position: absolute;
     content: '';
@@ -51,7 +52,6 @@
     top: 0;
     box-shadow: 0 1px 4px 3px rgba(255, 255, 255, .6);
 }
-
 .musicPlayer:after {
     position: absolute;
     content: '';
@@ -70,7 +70,7 @@
     border-radius: calc(var(--player-radius) - var(--player-padding));
     overflow: hidden;
 }
-#thumbLink::after {
+#thumbLink:after {
     grid-area: thumb;   
     border-radius: calc(var(--player-radius) - var(--player-padding));
     top: 0; left: 0; bottom: 0; right: 0;
@@ -132,7 +132,7 @@
 #buttons>* {
     aspect-ratio: 1/1;
     height: var(--button-height);
-    font-family: "media-icons";
+    font-family: "icons";
     color: var(--player-text);
     background: var(--player-accent);
     border-radius: 100%;

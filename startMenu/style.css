@@ -1,0 +1,109 @@
+@font-face {
+    font-family: "icons";
+    src: url("../Resources/icons.ttf") format("truetype");
+}
+
+.startMenu {
+    --menu-padding: 12px;
+    --icon-radius: 8px;
+    --icon-size: 64px;
+    --badge-count: 3;
+    --badge-width: 88px;
+    --badge-height: 31px;
+    --badge-gap: 2px;
+
+    --menu-bg:   rgba(  0, 255, 255, 0.2);
+    --menu-text: rgba(255, 255, 255, 1.0);
+
+    --overflow: 32px;
+
+    overflow: hidden;
+    padding: var(--menu-padding);
+    padding-top: calc(1 * calc(var(--overflow) + var(--menu-padding) + calc(var(--menu-padding) / 2)));
+    padding-left: calc(1 * calc(var(--overflow) + var(--menu-padding) + calc(var(--menu-padding) / 2)));
+    padding-bottom: calc(1 * calc(var(--overflow) + var(--menu-padding) + calc(var(--menu-padding) / 2)));
+    margin-top: calc(-1 * calc(var(--overflow) + calc(var(--menu-padding) / 2)));
+    margin-left: calc(-1 * calc(var(--overflow) + calc(var(--menu-padding) / 2)));
+    margin-bottom: calc(-1 * calc(var(--overflow) + calc(var(--menu-padding) / 2)));
+
+    display: grid;
+    grid-template-areas:
+        "user"
+        "buttons"
+        "badges";
+    grid-template-columns: auto;
+    grid-template-rows: var(--icon-size) 1fr auto;
+    gap: calc(var(--menu-padding) / 2);
+
+    color: var(--menu-text);
+    background-color: var(--menu-bg);
+    backdrop-filter: blur(8px);
+
+    width: min-content;
+    border-top-left-radius: var(--menu-radius);
+    border-top-right-radius: var(--menu-radius);
+    box-shadow:
+        inset 0 0 3px 0px rgba(255, 255, 255, 0.4), /* internal highlight */
+        inset 0 0 3px 1px rgba(  0,   0,   0, 0.4), /* internal edge */
+        inset 0 0 3px 5px rgba(  0,   0,   0, 0.1), /* internal shadow */
+          2px 2px 4px 3px rgba(  0,   0,   0, 0.3); /* external shadow */
+}
+.startMenu:before {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 0;
+    top: 0;
+    box-shadow: 0 1px 4px 3px rgba(255, 255, 255, .6);
+}
+.startMenu:after {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 0;
+    bottom: 0;
+    box-shadow: 0 -1px 4px 4px rgba(0, 0, 0, .15);
+}
+
+.user {
+    align-self: flex-start;
+    display: flex;
+    flex-direction: row;
+    gap: calc(var(--menu-padding) / 2);
+}
+.usericon {
+    height: var(--icon-size);
+    width: var(--icon-size);
+    border-radius: var(--icon-radius);
+    background-image: url(../Resources/icon.png);
+    background-size: cover;
+    box-shadow:
+    inset 0 -1px 2px 1px rgba(  0,   0,   0, 0.6), /* internal shadow */
+    inset 0  1px 2px 1px rgba(255, 255, 255, 0.6), /* internal highlight */
+        0px  1px 2px 0px rgba(255, 255, 255, 0.8), /* external highlight */
+        0px -1px 2px 0px rgba(  0,   0,   0, 0.8); /* external shadow */
+}
+.username {
+    align-self: center;
+    justify-self: start;
+    text-shadow: black 0 0 0.2em;
+}
+
+.buttons {
+    grid-area: buttons;
+}
+
+.badges {
+    grid-area: badges;
+    width: calc(calc(var(--badge-width) + var(--badge-gap)) * var(--badge-count));
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+    gap: var(--badge-gap);
+}
+.badges a>* {
+	height: var(--badge-height);
+	width: var(--badge-width);
+    border-radius: 2px;
+    overflow: hidden;
+}

@@ -1,7 +1,7 @@
 SplineFontDB: 3.2
-FontName: media-icons
-FullName: Media Icons
-FamilyName: media-icons
+FontName: icons
+FullName: Icons
+FamilyName: icons
 Weight: Medium
 Copyright: 
 Version: 1.000
@@ -22,7 +22,7 @@ OS2Version: 3
 OS2_WeightWidthSlopeOnly: 0
 OS2_UseTypoMetrics: 0
 CreationTime: 1676185689
-ModificationTime: 1715541983
+ModificationTime: 1715602452
 PfmFamily: 81
 TTFWeight: 400
 TTFWidth: 5
