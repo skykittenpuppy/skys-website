@@ -10,59 +10,39 @@
     --badge-count: 3;
     --badge-width: 88px;
     --badge-height: 31px;
-    --badge-gap: 2px;
+    --badge-gap: 1px;
 
-    --menu-bg:   rgba(  0, 255, 255, 0.2);
-    --menu-text: rgba(255, 255, 255, 1.0);
+    --menu-bg:        rgba(  0, 255, 255, 0.2);
+    --menu-text:      rgba(255, 255, 255, 1.0);
+    --buttons-select: rgba(255,   0, 255, 0.5);
+    --buttons-main:   rgba(255,   0, 255, 0.25);
+    --buttons-alt: transparent;
 
     --overflow: 32px;
 
     overflow: hidden;
-    padding: var(--menu-padding);
-    padding-top: calc(1 * calc(var(--overflow) + var(--menu-padding) + calc(var(--menu-padding) / 2)));
-    padding-left: calc(1 * calc(var(--overflow) + var(--menu-padding) + calc(var(--menu-padding) / 2)));
-    padding-bottom: calc(1 * calc(var(--overflow) + var(--menu-padding) + calc(var(--menu-padding) / 2)));
-    margin-top: calc(-1 * calc(var(--overflow) + calc(var(--menu-padding) / 2)));
-    margin-left: calc(-1 * calc(var(--overflow) + calc(var(--menu-padding) / 2)));
-    margin-bottom: calc(-1 * calc(var(--overflow) + calc(var(--menu-padding) / 2)));
-
+    padding-top: calc(1 * calc(var(--overflow) - calc(var(--menu-padding) / 2)));
+    padding-bottom: calc(1 * calc(var(--overflow) - calc(var(--menu-padding) / 2)));
+    margin-top: calc(-1 * calc(var(--overflow) - calc(var(--menu-padding) / 2)));
+    margin-left: calc(-1 * calc(var(--overflow) - calc(var(--menu-padding) / 2)));
+    margin-bottom: calc(-1 * calc(var(--overflow) - calc(var(--menu-padding) / 2)));
+    
     display: grid;
     grid-template-areas:
         "user"
         "buttons"
         "badges";
     grid-template-columns: auto;
-    grid-template-rows: var(--icon-size) 1fr auto;
-    gap: calc(var(--menu-padding) / 2);
+    grid-template-rows: calc(var(--icon-size) + calc(2* var(--menu-padding))) 1fr auto;
 
     color: var(--menu-text);
-    background-color: var(--menu-bg);
     backdrop-filter: blur(8px);
 
-    width: min-content;
-    border-top-left-radius: var(--menu-radius);
-    border-top-right-radius: var(--menu-radius);
     box-shadow:
         inset 0 0 3px 0px rgba(255, 255, 255, 0.4), /* internal highlight */
         inset 0 0 3px 1px rgba(  0,   0,   0, 0.4), /* internal edge */
         inset 0 0 3px 5px rgba(  0,   0,   0, 0.1), /* internal shadow */
           2px 2px 4px 3px rgba(  0,   0,   0, 0.3); /* external shadow */
-}
-.startMenu:before {
-    position: absolute;
-    content: '';
-    width: 100%;
-    height: 0;
-    top: 0;
-    box-shadow: 0 1px 4px 3px rgba(255, 255, 255, .6);
-}
-.startMenu:after {
-    position: absolute;
-    content: '';
-    width: 100%;
-    height: 0;
-    bottom: 0;
-    box-shadow: 0 -1px 4px 4px rgba(0, 0, 0, .15);
 }
 
 .user {
@@ -70,12 +50,16 @@
     display: flex;
     flex-direction: row;
     gap: calc(var(--menu-padding) / 2);
+
+    background-color: var(--menu-bg);
+    padding: var(--menu-padding);
+    padding-left: calc(1 * calc(var(--overflow) + calc(var(--menu-padding) / 2)));
 }
 .usericon {
     height: var(--icon-size);
     width: var(--icon-size);
     border-radius: var(--icon-radius);
-    background-image: url(../Resources/icon.png);
+    background-image: url(../Resources/usericon.png);
     background-size: cover;
     box-shadow:
     inset 0 -1px 2px 1px rgba(  0,   0,   0, 0.6), /* internal shadow */
@@ -91,6 +75,46 @@
 
 .buttons {
     grid-area: buttons;
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: var(--menu-padding);
+    padding: 0px;
+    display: flex;
+    flex-direction: column;
+
+    box-shadow:
+    inset 0  0px 2px 1px rgba(  0,   0,   0, 0.6), /* internal shadow */
+        0px  1px 2px 0px rgba(255, 255, 255, 0.8), /* external highlight */
+        0px -1px 2px 0px rgba(  0,   0,   0, 0.8); /* external shadow */
+}
+.button {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 8px;
+
+    cursor: pointer;
+    color: var(--menu-text);
+    text-shadow: black 0 0 0.2em;
+    font-size: 1.5em;
+    padding: 4px;
+    padding-left: calc(1 * calc(var(--overflow) + calc(var(--menu-padding) / 2)));
+    border: 0;
+    
+    background: linear-gradient(90deg in oklab, var(--buttons-main) 0%, var(--buttons-alt) 100%);
+    box-shadow:
+    inset 0 -1px 2px 0px rgba(  0,   0,   0, 0.6), /* internal shadow */
+    inset 0  1px 2px 0px rgba(255, 255, 255, 0.6), /* internal highlight */
+        0px  1px 2px 0px rgba(255, 255, 255, 0.8), /* external highlight */
+        0px -1px 2px 0px rgba(  0,   0,   0, 0.8); /* external shadow */
+}
+.Home #HomeButton,
+.OCs #OCsButton,
+.Art #ArtButton {
+    background: linear-gradient(90deg in oklab, var(--buttons-select) 25%, var(--buttons-alt) 100%);
+}
+.icon{
+    font-family: "icons";
+    font-size: 1.5em;
 }
 
 .badges {
@@ -100,6 +124,10 @@
 	justify-content: center;
 	flex-wrap: wrap;
     gap: var(--badge-gap);
+
+    background-color: var(--menu-bg);
+    padding: var(--menu-padding);
+    padding-left: calc(1 * calc(var(--overflow) + calc(var(--menu-padding) / 2)));
 }
 .badges a>* {
 	height: var(--badge-height);

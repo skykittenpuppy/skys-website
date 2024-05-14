@@ -1,10 +1,26 @@
+@font-face {
+    font-family: "icons";
+    src: url("../Resources/icons.ttf") format("truetype");
+}
+
 .mainContent {
+    position: relative;
+    margin: 32px;
+}
+.Home #HomeContent,
+.OCs #OCsContent,
+.Art #ArtContent {
+    transform: translate(0, 0) scale(100%);
+}
+.contentWindow {
+    position: absolute;
+    height: 100%;
+    width: 100%;
     justify-content: center;
     align-items: center;
     display: flex;
 
     overflow: hidden;
-    margin: 32px;
     color: rgba(255, 255, 255, 1.0);
     background-color: rgba(  0, 255, 255, 0.2);
     backdrop-filter: blur(8px);
@@ -14,8 +30,11 @@
         inset 0 0 3px 1px rgba(  0,   0,   0, 0.4), /* internal edge */
         inset 0 0 3px 5px rgba(  0,   0,   0, 0.1), /* internal shadow */
           2px 2px 4px 3px rgba(  0,   0,   0, 0.3); /* external shadow */
+
+    transition: transform 0.25s;
+    transform: translate(200%, 0%) scale(1%);
 }
-.mainContent:before {
+.contentWindow:before {
     position: absolute;
     content: '';
     width: 100%;
@@ -23,7 +42,7 @@
     top: 0;
     box-shadow: 0 1px 4px 3px rgba(255, 255, 255, .6);
 }
-.mainContent:after {
+.contentWindow:after {
     position: absolute;
     content: '';
     width: 100%;
@@ -32,8 +51,3 @@
     box-shadow: 0 -1px 4px 4px rgba(0, 0, 0, .15);
 }
 
-.warn {
-    text-shadow: black 1px 1px 2px;
-    font-size: xx-large;
-    color: red;
-}

@@ -11,9 +11,10 @@
     --button-height: 36px;
     --thumb-size: 96px;
 
-    --player-bg:     rgba(  0, 255, 255, 0.2);
-    --player-text:   rgba(255, 255, 255, 1.0);
-    --player-accent: rgba(172,   0, 172, 1.0);
+    --player-bg:        rgba(  0, 255, 255, 0.2);
+    --player-text:      rgba(255, 255, 255, 1.0);
+    --player-buttons-1: rgba(255,   0, 255, 0.5);
+    --player-buttons-2: rgba(255, 255, 255, 0.5);
 
     --overflow: 32px;
 
@@ -134,7 +135,7 @@
     height: var(--button-height);
     font-family: "icons";
     color: var(--player-text);
-    background: var(--player-accent);
+    background: var(--player-buttons-1);
     border-radius: 100%;
     font-size: 128%;
     padding: 0;
@@ -159,7 +160,7 @@
     appearance: none;
     height: var(--volume-height);
     border-radius: var(--volume-height);
-    background: linear-gradient(to right, var(--player-accent) 0% var(--volume-value), var(--player-text) var(--volume-value) 100%);
+    background: linear-gradient(to right, var(--player-buttons-1) 0% var(--volume-value), var(--player-buttons-2) var(--volume-value) 100%);
     box-shadow:
     inset 0 -1px 2px 0px rgba(  0,   0,   0, 0.6), /* internal shadow */
     inset 0  1px 2px 0px rgba(255, 255, 255, 0.6), /* internal highlight */
