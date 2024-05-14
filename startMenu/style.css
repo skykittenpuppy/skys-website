@@ -112,7 +112,7 @@
 .Art #ArtButton {
     background: linear-gradient(90deg in oklab, var(--buttons-select) 25%, var(--buttons-alt) 100%);
 }
-.icon{
+.startMenu .icon{
     font-family: "icons";
     font-size: 1.5em;
 }
