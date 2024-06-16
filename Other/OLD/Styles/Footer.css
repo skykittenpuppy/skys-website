@@ -1,0 +1,18 @@
+body{
+	margin: 0;
+	overflow: visible;
+}
+.badges{
+	align-self: center;
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	padding-inline: 8vw;
+}
+.badges a{
+	text-decoration: none;
+}
+.badges img{
+	height: 31px;
+	width: 88px;
+}

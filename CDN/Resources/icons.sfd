@@ -1,0 +1,740 @@
+SplineFontDB: 3.2
+FontName: icons
+FullName: Icons
+FamilyName: icons
+Weight: Medium
+Copyright: 
+Version: 1.000
+ItalicAngle: 0
+UnderlinePosition: -3
+UnderlineWidth: 1
+Ascent: 26
+Descent: 6
+InvalidEm: 0
+sfntRevision: 0x00010000
+LayerCount: 2
+Layer: 0 1 "Back" 1
+Layer: 1 1 "Fore" 0
+XUID: [1021 125 -218654192 9094997]
+StyleMap: 0x0040
+FSType: 4
+OS2Version: 3
+OS2_WeightWidthSlopeOnly: 0
+OS2_UseTypoMetrics: 0
+CreationTime: 1676185689
+ModificationTime: 1715649491
+PfmFamily: 81
+TTFWeight: 400
+TTFWidth: 5
+LineGap: 0
+VLineGap: 0
+Panose: 0 0 0 0 0 0 0 0 0 0
+OS2TypoAscent: 29
+OS2TypoAOffset: 0
+OS2TypoDescent: -8
+OS2TypoDOffset: 0
+OS2TypoLinegap: 2
+OS2WinAscent: 29
+OS2WinAOffset: 0
+OS2WinDescent: 10
+OS2WinDOffset: 0
+HheadAscent: 29
+HheadAOffset: 0
+HheadDescent: -10
+HheadDOffset: 0
+OS2SubXSize: 22
+OS2SubYSize: 21
+OS2SubXOff: 0
+OS2SubYOff: 5
+OS2SupXSize: 22
+OS2SupYSize: 21
+OS2SupXOff: 0
+OS2SupYOff: 16
+OS2StrikeYSize: 2
+OS2StrikeYPos: 8
+OS2CapHeight: 22
+OS2XHeight: 16
+OS2Vendor: 'PYRS'
+OS2CodePages: 00000001.00000000
+OS2UnicodeRanges: 80000003.1000000a.00000000.00000000
+Lookup: 4 0 1 "'liga' Standard Ligatures in Latin lookup 0" { "'liga' Standard Ligatures in Latin lookup 0 subtable"  } ['liga' ('DFLT' <'dflt' > 'latn' <'dflt' > ) ]
+Lookup: 4 0 1 "'liga' Standard Ligatures in Latin lookup 1" { "'liga' Standard Ligatures in Latin lookup 1 subtable"  } ['liga' ('latn' <'dflt' > ) ]
+Lookup: 258 0 0 "'kern' Horizontal Kerning in Latin lookup 0" { "'kern' Horizontal Kerning in Latin lookup 0 subtable"  } ['kern' ('DFLT' <'dflt' > 'latn' <'dflt' > ) ]
+MarkAttachClasses: 1
+DEI: 91125
+TtTable: prep
+PUSHW_1
+ 0
+CALL
+SVTCA[y-axis]
+PUSHW_3
+ 1
+ 1
+ 2
+CALL
+SVTCA[x-axis]
+PUSHW_3
+ 2
+ 1
+ 2
+CALL
+SVTCA[x-axis]
+PUSHW_8
+ 2
+ 32
+ 27
+ 21
+ 15
+ 9
+ 0
+ 8
+CALL
+SVTCA[y-axis]
+PUSHW_8
+ 1
+ 35
+ 27
+ 21
+ 15
+ 9
+ 0
+ 8
+CALL
+SVTCA[y-axis]
+PUSHW_3
+ 3
+ 4
+ 7
+CALL
+PUSHW_1
+ 0
+DUP
+RCVT
+RDTG
+ROUND[Black]
+RTG
+WCVTP
+EndTTInstrs
+TtTable: fpgm
+PUSHW_1
+ 0
+FDEF
+MPPEM
+PUSHW_1
+ 9
+LT
+IF
+PUSHB_2
+ 1
+ 1
+INSTCTRL
+EIF
+PUSHW_1
+ 511
+SCANCTRL
+PUSHW_1
+ 68
+SCVTCI
+PUSHW_2
+ 9
+ 3
+SDS
+SDB
+ENDF
+PUSHW_1
+ 1
+FDEF
+DUP
+DUP
+RCVT
+ROUND[Black]
+WCVTP
+PUSHB_1
+ 1
+ADD
+ENDF
+PUSHW_1
+ 2
+FDEF
+PUSHW_1
+ 1
+LOOPCALL
+POP
+ENDF
+PUSHW_1
+ 3
+FDEF
+DUP
+GC[cur]
+PUSHB_1
+ 3
+CINDEX
+GC[cur]
+GT
+IF
+SWAP
+EIF
+DUP
+ROLL
+DUP
+ROLL
+MD[grid]
+ABS
+ROLL
+DUP
+GC[cur]
+DUP
+ROUND[Grey]
+SUB
+ABS
+PUSHB_1
+ 4
+CINDEX
+GC[cur]
+DUP
+ROUND[Grey]
+SUB
+ABS
+GT
+IF
+SWAP
+NEG
+ROLL
+EIF
+MDAP[rnd]
+DUP
+PUSHB_1
+ 0
+GTEQ
+IF
+ROUND[Black]
+DUP
+PUSHB_1
+ 0
+EQ
+IF
+POP
+PUSHB_1
+ 64
+EIF
+ELSE
+ROUND[Black]
+DUP
+PUSHB_1
+ 0
+EQ
+IF
+POP
+PUSHB_1
+ 64
+NEG
+EIF
+EIF
+MSIRP[no-rp0]
+ENDF
+PUSHW_1
+ 4
+FDEF
+DUP
+GC[cur]
+PUSHB_1
+ 4
+CINDEX
+GC[cur]
+GT
+IF
+SWAP
+ROLL
+EIF
+DUP
+GC[cur]
+DUP
+ROUND[White]
+SUB
+ABS
+PUSHB_1
+ 4
+CINDEX
+GC[cur]
+DUP
+ROUND[White]
+SUB
+ABS
+GT
+IF
+SWAP
+ROLL
+EIF
+MDAP[rnd]
+MIRP[rp0,min,rnd,black]
+ENDF
+PUSHW_1
+ 5
+FDEF
+MPPEM
+DUP
+PUSHB_1
+ 3
+MINDEX
+LT
+IF
+LTEQ
+IF
+PUSHB_1
+ 128
+WCVTP
+ELSE
+PUSHB_1
+ 64
+WCVTP
+EIF
+ELSE
+POP
+POP
+DUP
+RCVT
+PUSHB_1
+ 192
+LT
+IF
+PUSHB_1
+ 192
+WCVTP
+ELSE
+POP
+EIF
+EIF
+ENDF
+PUSHW_1
+ 6
+FDEF
+DUP
+DUP
+RCVT
+ROUND[Black]
+WCVTP
+PUSHB_1
+ 1
+ADD
+DUP
+DUP
+RCVT
+RDTG
+ROUND[Black]
+RTG
+WCVTP
+PUSHB_1
+ 1
+ADD
+ENDF
+PUSHW_1
+ 7
+FDEF
+PUSHW_1
+ 6
+LOOPCALL
+ENDF
+PUSHW_1
+ 8
+FDEF
+MPPEM
+DUP
+PUSHB_1
+ 3
+MINDEX
+GTEQ
+IF
+PUSHB_1
+ 64
+ELSE
+PUSHB_1
+ 0
+EIF
+ROLL
+ROLL
+DUP
+PUSHB_1
+ 3
+MINDEX
+GTEQ
+IF
+SWAP
+POP
+PUSHB_1
+ 128
+ROLL
+ROLL
+ELSE
+ROLL
+SWAP
+EIF
+DUP
+PUSHB_1
+ 3
+MINDEX
+GTEQ
+IF
+SWAP
+POP
+PUSHW_1
+ 192
+ROLL
+ROLL
+ELSE
+ROLL
+SWAP
+EIF
+DUP
+PUSHB_1
+ 3
+MINDEX
+GTEQ
+IF
+SWAP
+POP
+PUSHW_1
+ 256
+ROLL
+ROLL
+ELSE
+ROLL
+SWAP
+EIF
+DUP
+PUSHB_1
+ 3
+MINDEX
+GTEQ
+IF
+SWAP
+POP
+PUSHW_1
+ 320
+ROLL
+ROLL
+ELSE
+ROLL
+SWAP
+EIF
+DUP
+PUSHW_1
+ 3
+MINDEX
+GTEQ
+IF
+PUSHB_1
+ 3
+CINDEX
+RCVT
+PUSHW_1
+ 384
+LT
+IF
+SWAP
+POP
+PUSHW_1
+ 384
+SWAP
+POP
+ELSE
+PUSHB_1
+ 3
+CINDEX
+RCVT
+SWAP
+POP
+SWAP
+POP
+EIF
+ELSE
+POP
+EIF
+WCVTP
+ENDF
+PUSHW_1
+ 9
+FDEF
+MPPEM
+GTEQ
+IF
+RCVT
+WCVTP
+ELSE
+POP
+POP
+EIF
+ENDF
+EndTTInstrs
+ShortTable: cvt  11
+  20
+  161
+  176
+  0
+  0
+  -227
+  61
+  574
+  36
+  837
+  0
+EndShort
+ShortTable: maxp 16
+  1
+  0
+  112
+  625
+  19
+  0
+  0
+  1
+  0
+  0
+  10
+  0
+  512
+  371
+  0
+  0
+EndShort
+LangName: 1033 "" "" "Regular" "" "" "Version 1.000" "" "Nice Sugar is a trademark of Khurasan." "Khurasan" "Khurasan" "Copyright (c) 2023 by Khurasan. All rights reserved." "www.khurasanstudio.com" "www.khurasanstudio.com" "contact me at khurasantype@gmail.com" "https://khurasanstudio.com/license/"
+Encoding: UnicodeBmp
+Compacted: 1
+UnicodeInterp: none
+NameList: AGL For New Fonts
+DisplaySize: -48
+AntiAlias: 1
+FitToEm: 0
+WinInfo: 0 16 4
+BeginPrivate: 0
+EndPrivate
+AnchorClass2: "afewr""" 
+BeginChars: 65537 10
+
+StartChar: D
+Encoding: 68 68 0
+Width: 32
+GlyphClass: 1
+Flags: W
+LayerCount: 2
+Fore
+SplineSet
+3 23 m 1,0,-1
+ 3 -3 l 1,1,-1
+ 25 10 l 1,2,-1
+ 25 10 l 1,3,-1
+ 3 23 l 1,0,-1
+29 23 m 1,4,-1
+ 22 23 l 1,5,-1
+ 22 -3 l 1,6,-1
+ 29 -3 l 1,7,-1
+ 29 23 l 1,4,-1
+EndSplineSet
+Validated: 5
+Kerns2: 3 -2 "'kern' Horizontal Kerning in Latin lookup 0 subtable"
+EndChar
+
+StartChar: C
+Encoding: 67 67 1
+Width: 32
+GlyphClass: 1
+Flags: W
+LayerCount: 2
+Fore
+SplineSet
+29 23 m 5,0,-1
+ 29 -3 l 5,1,-1
+ 7 10 l 5,2,-1
+ 7 10 l 5,3,-1
+ 29 23 l 5,0,-1
+3 23 m 5,4,-1
+ 10 23 l 5,5,-1
+ 10 -3 l 5,6,-1
+ 3 -3 l 5,7,-1
+ 3 23 l 5,4,-1
+EndSplineSet
+Validated: 5
+EndChar
+
+StartChar: B
+Encoding: 66 66 2
+Width: 32
+GlyphClass: 1
+Flags: W
+LayerCount: 2
+Fore
+SplineSet
+6 23 m 5,0,-1
+ 13 23 l 5,1,-1
+ 13 -3 l 5,2,-1
+ 6 -3 l 5,3,-1
+ 6 23 l 5,0,-1
+26 23 m 5,4,-1
+ 26 -3 l 5,5,-1
+ 19 -3 l 5,6,-1
+ 19 23 l 5,7,-1
+ 26 23 l 5,4,-1
+EndSplineSet
+Validated: 1
+EndChar
+
+StartChar: A
+Encoding: 65 65 3
+Width: 32
+GlyphClass: 1
+Flags: W
+LayerCount: 2
+Fore
+SplineSet
+6 23 m 5,0,-1
+ 6 -3 l 5,1,-1
+ 29 10 l 5,2,-1
+ 29 10 l 5,3,-1
+ 6 23 l 5,0,-1
+EndSplineSet
+Validated: 5
+EndChar
+
+StartChar: zero
+Encoding: 48 48 4
+Width: 32
+Flags: W
+LayerCount: 2
+Fore
+SplineSet
+16 23 m 5,0,-1
+ 16 23 l 5,1,-1
+ 29 10 l 5,2,-1
+ 3 10 l 5,3,-1
+ 16 23 l 5,0,-1
+7 12 m 5,4,-1
+ 25 12 l 5,5,-1
+ 25 -3 l 5,6,-1
+ 7 -3 l 5,7,-1
+ 7 12 l 5,4,-1
+EndSplineSet
+Validated: 5
+EndChar
+
+StartChar: two
+Encoding: 50 50 5
+Width: 32
+Flags: W
+LayerCount: 2
+Fore
+SplineSet
+7 9 m 5,0,-1
+ 18 20 l 5,1,-1
+ 26 12 l 5,2,-1
+ 15 1 l 5,3,-1
+ 7 9 l 5,0,-1
+4 6 m 5,4,-1
+ 6 8 l 5,5,6
+ 6 8 6 8 14 0 c 5,7,-1
+ 12 -2 l 5,8,9
+ 11 -3 11 -3 10 -2 c 5,10,-1
+ 4 4 l 5,11,12
+ 3 5 3 5 4 6 c 5,4,-1
+29 23 m 5,13,-1
+ 29 15 l 5,14,-1
+ 27 13 l 4,15,16
+ 27 13 27 13 19 21 c 4,17,18
+ 19 21 19 21 21 23 c 5,19,-1
+ 29 23 l 5,13,-1
+EndSplineSet
+Validated: 33
+EndChar
+
+StartChar: one
+Encoding: 49 49 6
+Width: 32
+Flags: WO
+LayerCount: 2
+Fore
+SplineSet
+20 5.5 m 128,-1,1
+ 20 10 20 10 24.5 10.5 c 128,-1,2
+ 29 11 29 11 29 6 c 128,-1,3
+ 29 1 29 1 24.5 1 c 128,-1,0
+ 20 1 20 1 20 5.5 c 128,-1,1
+7 18.5 m 128,-1,5
+ 7 23 7 23 12 23 c 128,-1,6
+ 17 23 17 23 16.5 18.5 c 128,-1,7
+ 16 14 16 14 11.5 14 c 128,-1,4
+ 7 14 7 14 7 18.5 c 128,-1,5
+17 16 m 128,-1,9
+ 17 21 17 21 21.5 20.5 c 128,-1,10
+ 26 20 26 20 26.5 15.5 c 128,-1,11
+ 27 11 27 11 22 11 c 128,-1,8
+ 17 11 17 11 17 16 c 128,-1,9
+4 6 m 132,-1,13
+ 3 13 3 13 11 13 c 128,-1,14
+ 19 13 19 13 19 5 c 128,-1,15
+ 19 -3 19 -3 12 -2 c 128,-1,12
+ 5 -1 5 -1 4 6 c 132,-1,13
+EndSplineSet
+Validated: 33
+EndChar
+
+StartChar: plus
+Encoding: 43 43 7
+Width: 32
+Flags: W
+LayerCount: 2
+Fore
+SplineSet
+5 1 m 5,0,-1
+ 27 1 l 5,1,-1
+ 27 -3 l 5,2,-1
+ 5 -3 l 5,3,-1
+ 5 1 l 5,0,-1
+3 23 m 5,4,-1
+ 29 23 l 5,5,-1
+ 29 -3 l 5,6,-1
+ 25 -3 l 5,7,-1
+ 25 19 l 5,8,-1
+ 7 19 l 5,9,-1
+ 7 -3 l 5,10,-1
+ 3 -3 l 5,11,-1
+ 3 23 l 5,4,-1
+EndSplineSet
+Validated: 5
+EndChar
+
+StartChar: hyphen
+Encoding: 45 45 8
+Width: 32
+Flags: W
+LayerCount: 2
+Fore
+SplineSet
+3 13 m 5,0,-1
+ 29 13 l 5,1,-1
+ 29 7 l 5,2,-1
+ 3 7 l 5,3,-1
+ 3 13 l 5,0,-1
+EndSplineSet
+Validated: 1
+EndChar
+
+StartChar: asterisk
+Encoding: 42 42 9
+Width: 32
+Flags: W
+LayerCount: 2
+Fore
+SplineSet
+22 23 m 5,0,-1
+ 29 23 l 5,1,-1
+ 10 -3 l 5,2,-1
+ 3 -3 l 5,3,-1
+ 22 23 l 5,0,-1
+3 23 m 5,4,-1
+ 10 23 l 5,5,-1
+ 29 -3 l 5,6,-1
+ 22 -3 l 5,7,-1
+ 3 23 l 5,4,-1
+EndSplineSet
+Validated: 5
+EndChar
+EndChars
+EndSplineFont

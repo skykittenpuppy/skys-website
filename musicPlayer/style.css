@@ -1,8 +1,3 @@
-@font-face {
-    font-family: "icons";
-    src: url("../Resources/icons.ttf") format("truetype");
-}
-
 .musicPlayer {
     --player-width: 448px;
     --player-radius: 24px;

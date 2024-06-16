@@ -1,0 +1,14 @@
+body{
+	margin: 0;
+	overflow: visible;
+}
+div{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 32px;
+}
+div img{
+	width: 10%;
+	max-width: 128px;
+}

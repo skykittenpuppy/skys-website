@@ -1,8 +1,3 @@
-@font-face {
-    font-family: "icons";
-    src: url("../Resources/icons.ttf") format("truetype");
-}
-
 .mainContent {
     position: relative;
     margin: 32px;
@@ -19,13 +14,13 @@
     --header-icon-radius: 4px;
 
     position: absolute;
-    height: calc(100% - var(--window-padding));
-    width: calc(100% - var(--window-padding));
+    height: calc(100% - var(--window-padding) - var(--window-padding));
+    width: calc(100% - var(--window-padding) - var(--window-padding));
     padding: var(--window-padding);
     display: grid;
     grid-template-areas:
         "header"
-        "not";
+        "content";
     grid-template-columns: 1fr;
     grid-template-rows: var(--header-height) 1fr;
 

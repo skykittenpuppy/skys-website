@@ -14,7 +14,7 @@ function onYouTubeIframeAPIReady() {
 		width: 0,
 		height: 0,
 		playerVars: {
-			'autoplay': 1,
+			'autoplay': 0,//1,
 			'controls': 0,
 			'disblekb': 1,
 			'fs': 0,
@@ -32,6 +32,7 @@ function onYouTubeIframeAPIReady() {
 					var tim = Math.floor(player.getCurrentTime())
 					time.innerText = Math.floor(tim/60)+":"+(tim%60).toString().padStart(2, '0');
 				}, 100)
+				//player.playVideo();
 			},
 			'onStateChange': function (e) {
 				updatePlayer();

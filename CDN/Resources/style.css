@@ -1,0 +1,39 @@
+@font-face {
+    font-family: "icons";
+    src: url("icons.ttf") format("truetype");
+}
+
+html {
+    top: 0; left: 0; bottom: 0; right: 0;
+    background-image: url("cloud.PNG");
+    background-position: center;
+    background-size: cover;
+    overflow: hidden;
+}
+body {
+    display: grid;
+    grid-template-areas:
+        "A B"
+        "A C";
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto 1fr;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+}
+
+.startMenu {
+    grid-area: A;
+    align-self: stretch;
+    justify-self: start;
+}
+.musicPlayer {
+    grid-area: B;
+    align-self: flex-start;
+    justify-self: end;
+}
+.mainContent {
+    grid-area: C;
+    align-self: auto;
+    justify-self: auto;
+}
