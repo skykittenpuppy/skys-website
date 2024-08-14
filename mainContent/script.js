@@ -12,3 +12,7 @@ OCsButton.addEventListener("click", (event) => {
 ArtButton.addEventListener("click", (event) => {
 	document.body.className = "Art";
 })
+
+function minimiseOrClose(){
+	document.body.className = "";
+}

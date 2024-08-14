@@ -43,9 +43,11 @@
 	padding: 0;
 	min-width: 128px;
 	width: 10%;
+	cursor: pointer;
 }
 #artPicker img{
 	width: 100%;
 	aspect-ratio: 16/9;
 	object-fit: cover;
+	cursor: pointer;
 }
