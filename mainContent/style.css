@@ -4,7 +4,8 @@
 }
 .Home #HomeContent,
 .OCs #OCsContent,
-.Art #ArtContent {
+.Art #ArtContent,
+.Projects #ProjectsContent {
     transform: translate(0, 0) scale(100%);
 }
 .contentWindow {

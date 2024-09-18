@@ -1,0 +1,42 @@
+#ProjectsContent > span{
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+	overflow-y: scroll;
+}
+.project{
+	display: grid;
+	background: #222;
+	grid-template-areas:
+		"icon name"
+		"icon desc";
+	grid-template-columns: auto 1fr;
+	grid-template-rows: auto 1fr;
+	border-radius: 16px;
+	padding: 8px;
+	gap: 8px;
+}
+
+.projectIcon{
+	grid-area: icon;
+	border-radius: 8px;
+	width: 128px;
+	height: 128px;
+}
+.projectName{
+	grid-area: name;
+	font-size: xx-large;
+	color: cyan;
+}
+.directDownload::after{
+	content: " 📥";
+	font-size: medium;
+}
+.externalLink::after{
+	content: " 🔗";
+	font-size: medium;
+}
+.projectDesc{
+	grid-area: desc;
+}

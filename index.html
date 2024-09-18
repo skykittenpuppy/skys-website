@@ -3,9 +3,6 @@
         <title>the sky</title>
         <link rel="icon" type="image/x-icon" href="CDN/Resources/Favicon.png">
         <link rel="stylesheet" href="CDN/Resources/style.css">
-        <!--
-        <script defer src="testing/script.js"></script>
-        -->
         
         <script async src="https://www.youtube.com/iframe_api"></script>
         <script defer src="musicPlayer/script.js"></script>
@@ -18,9 +15,12 @@
 
         <script defer src="Art/script.js"></script>
         <link rel="stylesheet" href="Art/style.css">
+
+        <script defer src="Projects/script.js"></script>
+        <link rel="stylesheet" href="Projects/style.css">
     </head>
 
-    <body class="Art">
+    <body class="Home">
         <span class="musicPlayer">
             <a id="thumbLink">
                 <img id="thumbImg"/>
@@ -50,15 +50,19 @@
             <span class="buttons">
                 <button id="HomeButton" class="button">
                     <span class="icon">0</span>
-                    <b>Home</b>
+                    <b>Home (WIP)</b>
                 </button>
                 <button id="OCsButton" class="button">
                     <span class="icon">1</span>
-                    <b>OCs</b>
+                    <b>OCs (WIP)</b>
                 </button>
                 <button id="ArtButton" class="button">
                     <span class="icon">2</span>
                     <b>Art</b>
+                </button>
+                <button id="ProjectsButton" class="button">
+                    <span class="icon">3</span>
+                    <b>Projects</b>
                 </button>
             </span>
             <span class="badges">
@@ -133,7 +137,7 @@
         <span class="mainContent">
             <span id="HomeContent" class="contentWindow">
                 <div class="header">
-                    <b>Home</b>
+                    <b>Home (WIP)</b>
                     <span class="icon">
                         <button onclick="minimiseOrClose()">-</button>
                         <button>+</button>
@@ -143,7 +147,7 @@
             </span>
             <span id="OCsContent" class="contentWindow">
                 <div class="header">
-                    <b>OCs</b>
+                    <b>OCs (WIP)</b>
                     <span class="icon">
                         <button onclick="minimiseOrClose()">-</button>
                         <button>+</button>
@@ -167,6 +171,16 @@
                     </div>
                     <div id="artPicker">
                     </div>
+                </div>
+            </span>
+            <span id="ProjectsContent" class="contentWindow">
+                <div class="header">
+                    <b>Projects (WIP)</b>
+                    <span class="icon">
+                        <button onclick="minimiseOrClose()">-</button>
+                        <button>+</button>
+                        <button onclick="minimiseOrClose()">*</button>
+                    </span>
                 </div>
             </span>
         </span>
