@@ -10,9 +10,10 @@
 	background: #222;
 	grid-template-areas:
 		"icon name"
-		"icon desc";
+		"icon desc"
+		"icon other";
 	grid-template-columns: auto 1fr;
-	grid-template-rows: auto 1fr;
+	grid-template-rows: auto 1fr auto;
 	border-radius: 16px;
 	padding: 8px;
 	gap: 8px;
@@ -39,4 +40,9 @@
 }
 .projectDesc{
 	grid-area: desc;
+	margin: 4px;
+}
+.projectOther{
+	grid-area: other;
+	margin: 4px;
 }
