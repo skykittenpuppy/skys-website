@@ -50,7 +50,7 @@ var projList = [
 ];
 
 let mainSection = document.createElement("span");
-document.querySelector("#ProjectsContent").appendChild(mainSection);
+document.querySelector("#Projects").appendChild(mainSection);
 
 for (let proj in projList) {
 	let container = document.createElement("div")

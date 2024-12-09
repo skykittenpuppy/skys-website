@@ -2,11 +2,8 @@
     position: relative;
     margin: 32px;
 }
-.Home #HomeContent,
-.OCs #OCsContent,
-.Art #ArtContent,
-.Projects #ProjectsContent {
-    transform: translate(0, 0) scale(100%);
+.contentWindow:target {
+    transform: translate(0, 0) scale(100%) !important;
 }
 .contentWindow {
     --window-padding: 12px;

@@ -1,20 +1,16 @@
-document.querySelector("#HomeButton")
-		.addEventListener("click", (event) => {
-	document.body.className = "Home";
+document.querySelector("#HomeButton").addEventListener("click", (event) => {
+	window.location.hash = "Home"
 })
-document.querySelector("#OCsButton")
-		.addEventListener("click", (event) => {
-	document.body.className = "OCs";
+document.querySelector("#OCsButton").addEventListener("click", (event) => {
+	window.location.hash = "OCs"
 })
-document.querySelector("#ArtButton")
-		.addEventListener("click", (event) => {
-	document.body.className = "Art";
+document.querySelector("#ArtButton").addEventListener("click", (event) => {
+	window.location.hash = "Art"
 })
-document.querySelector("#ProjectsButton")
-		.addEventListener("click", (event) => {
-	document.body.className = "Projects";
+document.querySelector("#ProjectsButton").addEventListener("click", (event) => {
+	window.location.hash = "Projects"
 })
 
-function minimiseOrClose(){
-	document.body.className = "";
+function closeWindow(){
+	window.history.pushState("", document.title, window.location.pathname);
 }
