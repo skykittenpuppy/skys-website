@@ -8,7 +8,7 @@ var projList = [
 	{	func: addPack,
 		name: "Sky's Better Carpets",
 		desc: "A Minecraft Resource-Pack that makes carpets overhang onto the block below",
-		updt: new Date("2024-09-18"),
+		updt: new Date("2024-12-09"),
 	},
 	{	func: addPack,
 		name: "Sky's Better Discs",
