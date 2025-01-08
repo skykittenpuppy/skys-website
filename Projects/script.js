@@ -1,10 +1,4 @@
 var projList = [
-	{
-		func: addLink,
-		name: "Sky's Assorted Sweets",
-		desc: "A Minecraft Mod featuring Small to Medium tweaks",
-		link: "https://github.com/skykittenpuppy/Skys-Assorted-Sweets",
-	},
 	{	func: addZip,
 		name: "MC Earth Pigs",
 		desc: "A Minecraft Data-Pack for 1.21.5 that adds 6 pig variants from Minecraft Earth",
@@ -42,13 +36,25 @@ var projList = [
 	},
 	{
 		func: addLink,
-		name: "PlateUp! MC",
+		name: "Datapacker's Construct [WIP]",
+		desc: "A Minecraft Data-Pack version of the Tinker's Construct Mod!",
+		link: "https://github.com/skykittenpuppy/Datapackers-Construct",
+	},
+	{
+		func: addLink,
+		name: "PlateUp! MC [WIP]",
 		desc: "A Minecraft Data-Pack that aims to recreate the game PlateUp!",
 		link: "https://github.com/skykittenpuppy/PlateUp-MC",
 	},
 	{
 		func: addLink,
-		name: "Community Life Series",
+		name: "Sky's Assorted Sweets [WIP]",
+		desc: "A Minecraft Mod featuring Small to Medium tweaks",
+		link: "https://github.com/skykittenpuppy/Skys-Assorted-Sweets",
+	},
+	{
+		func: addLink,
+		name: "Community Life Series [Abandoned]",
 		desc: "A Minecraft Data-Pack that aims to recreate the mechanics of the youtube Life Series SMP",
 		link: "https://github.com/skykittenpuppy/Community-Life-Series-Datapack",
 	},
