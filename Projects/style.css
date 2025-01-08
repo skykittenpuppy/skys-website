@@ -9,10 +9,10 @@
 	display: grid;
 	background: #222;
 	grid-template-areas:
-		"icon name"
-		"icon desc"
-		"icon other";
-	grid-template-columns: auto 1fr;
+		"icon name tags"
+		"icon desc desc"
+		"icon other other";
+	grid-template-columns: auto auto 1fr;
 	grid-template-rows: auto 1fr auto;
 	border-radius: 16px;
 	padding: 8px;
@@ -27,6 +27,7 @@
 }
 .projectName{
 	grid-area: name;
+	text-decoration: underline;
 	font-size: xx-large;
 	color: cyan;
 }
@@ -37,6 +38,13 @@
 .externalLink::after{
 	content: " 🔗";
 	font-size: medium;
+}
+.projectTags{
+	grid-area: tags;
+	text-decoration: underline dotted;
+	font-size: x-large;
+	color: red;
+	margin-top: auto;
 }
 .projectDesc{
 	grid-area: desc;
