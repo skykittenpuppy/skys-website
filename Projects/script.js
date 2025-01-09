@@ -1,71 +1,78 @@
 var projList = [
 	{	func: addZip,
 		name: "MC Earth Pigs",
-		desc: "A Minecraft Data-Pack for 1.21.5 that adds 6 pig variants from Minecraft Earth",
-		updt: new Date("2025-01-09"),
+		description: "A Minecraft Data-Pack for 1.21.5 that adds 6 pig variants from Minecraft Earth",
+		updated: new Date("2025-01-09"),
+		version: "v1.2",
 		tags: ["Datapack"],
 	},
 	{	func: addZip,
 		name: "Sky's Better Carpets",
-		desc: "A Minecraft Resource-Pack that makes carpets overhang onto the block below",
-		updt: new Date("2024-12-09"),
+		description: "A Minecraft Resource-Pack that makes carpets overhang onto the block below",
+		updated: new Date("2024-12-09"),
+		version: "v1.1",
 		tags: ["Resourcepack"],
 	},
 	{	func: addZip,
 		name: "Sky's Better Discs",
-		desc: "A Minecraft Resource-Pack that retextures music discs to have an even-center",
-		updt: new Date("2024-09-18"),
+		description: "A Minecraft Resource-Pack that retextures music discs to have an even-center",
+		updated: new Date("2024-09-18"),
+		version: "v1.0",
 		tags: ["Resourcepack"],
 	},
 	{	func: addZip,
 		name: "Sky's Title Screen",
-		desc: "A Minecraft Resource-Pack that replaces the logo and background on the title screen",
-		updt: new Date("2024-12-11"),
+		description: "A Minecraft Resource-Pack that replaces the logo and background on the title screen",
+		updated: new Date("2024-12-11"),
+		version: "v2.0",
 		tags: ["Resourcepack"],
 	},
 	{	func: addZip,
 		name: "Sky's Farmland Sides",
-		desc: "A Minecraft Resource-Pack that gives farmland blocks unique side textures",
-		updt: new Date("2024-09-18"),
+		description: "A Minecraft Resource-Pack that gives farmland blocks unique side textures",
+		updated: new Date("2024-09-18"),
+		version: "v1.0",
 		tags: ["Resourcepack"],
 	},
 	{	func: addZip,
 		name: "Sky's Relit Flames",
-		desc: "A Minecraft Resource-Pack that revamps the looks of different flaming blocks, like torches",
-		updt: new Date("2024-09-27"),
+		description: "A Minecraft Resource-Pack that revamps the looks of different flaming blocks, like torches",
+		updated: new Date("2024-09-27"),
+		version: "v1.0",
 		tags: ["Resourcepack"],
 	},
 	{	func: addZip,
 		name: "Sky's Softer Cakes",
-		desc: "A Minecraft Resource-Pack that modifies the cake textures to make them look softer",
-		updt: new Date("2024-09-18"),
+		description: "A Minecraft Resource-Pack that modifies the cake textures to make them look softer",
+		updated: new Date("2024-09-18"),
+		version: "v1.0",
 		tags: ["Resourcepack"],
 	},
 	{
 		func: addLink,
 		name: "Datapacker's Construct",
-		desc: "A Minecraft Data-Pack version of the Tinker's Construct Mod!",
+		description: "A Minecraft Data-Pack version of the Tinker's Construct Mod!",
 		link: "https://github.com/skykittenpuppy/Datapackers-Construct",
 		tags: ["Datapack", "WIP"],
 	},
 	{
 		func: addLink,
 		name: "PlateUp! MC",
-		desc: "A Minecraft Data-Pack that aims to recreate the game PlateUp!",
+		description: "A Minecraft Data-Pack that aims to recreate the game PlateUp!",
 		link: "https://github.com/skykittenpuppy/PlateUp-MC",
 		tags: ["Datapack", "WIP"],
 	},
 	{
 		func: addLink,
 		name: "Sky's Assorted Sweets",
-		desc: "A Minecraft Mod featuring Small to Medium tweaks",
+		description: "A Minecraft Mod featuring Small to Medium tweaks",
 		link: "https://github.com/skykittenpuppy/Skys-Assorted-Sweets",
 		tags: ["Mod", "WIP"],
 	},
 	{
 		func: addLink,
 		name: "Community Life Series",
-		desc: "A Minecraft Data-Pack that aims to recreate the mechanics of the youtube Life Series SMP",
+		description: "A Minecraft Data-Pack that aims to recreate the mechanics of the youtube Life Series SMP",
 		link: "https://github.com/skykittenpuppy/Community-Life-Series-Datapack",
 		tags: ["Datapack", "Abandoned"],
 	},
@@ -99,12 +106,12 @@ function addZip(container, info){
 	container.appendChild(tags)
 
 	let desc = document.createElement("p");
-	desc.innerText = info.desc;
+	desc.innerText = info.description;
 	desc.classList = "projectDesc"
 	container.appendChild(desc)
 
 	let other = document.createElement("p");
-	other.innerText = "Last updated: "+info.updt.toDateString();
+	other.innerText = info.version+": "+info.updated.toDateString();
 	other.classList = "projectOther"
 	container.appendChild(other)
 }
@@ -127,7 +134,7 @@ function addLink(container, info){
 	container.appendChild(tags)
 
 	let desc = document.createElement("p");
-	desc.innerText = info.desc;
+	desc.innerText = info.description;
 	desc.classList = "projectDesc"
 	container.appendChild(desc)
 }
