@@ -2,7 +2,7 @@ var projList = [
 	{	func: addZip,
 		name: "MC Earth Pigs",
 		desc: "A Minecraft Data-Pack for 1.21.5 that adds 6 pig variants from Minecraft Earth",
-		updt: new Date("2025-01-08"),
+		updt: new Date("2025-01-09"),
 		tags: ["Datapack"],
 	},
 	{	func: addZip,
