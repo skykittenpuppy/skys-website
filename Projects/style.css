@@ -11,7 +11,7 @@
 	grid-template-areas:
 		"icon name tags"
 		"icon desc desc"
-		"icon other other";
+		"other other other";
 	grid-template-columns: auto auto 1fr;
 	grid-template-rows: auto 1fr auto;
 	border-radius: 16px;

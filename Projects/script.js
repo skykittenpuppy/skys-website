@@ -1,10 +1,10 @@
 var projList = [
 	{	func: addZip,
 		name: "MC Earth Pigs",
-		description: "A Minecraft Data-Pack for 1.21.5 that adds 6 pig variants from Minecraft Earth",
+		description: "A Minecraft Data-Pack & Resource-Pack for 1.21.5 that adds 6 pig variants from Minecraft Earth \n (Put the zip both in your world's datapacks folder, as well as your resourcepacks folder)",
 		updated: new Date("2025-01-09"),
 		version: "v1.2",
-		tags: ["Datapack"],
+		tags: ["Datapack", "Resourcepack"],
 	},
 	{	func: addZip,
 		name: "Cheaper Duplication",
@@ -60,28 +60,28 @@ var projList = [
 		name: "Datapacker's Construct",
 		description: "A Minecraft Data-Pack version of the Tinker's Construct Mod!",
 		link: "https://github.com/skykittenpuppy/Datapackers-Construct",
-		tags: ["Datapack", "WIP"],
+		tags: ["Datapack", "", "WIP"],
 	},
 	{
 		func: addLink,
 		name: "PlateUp! MC",
 		description: "A Minecraft Data-Pack that aims to recreate the game PlateUp!",
 		link: "https://github.com/skykittenpuppy/PlateUp-MC",
-		tags: ["Datapack", "WIP"],
+		tags: ["Datapack", "", "WIP"],
 	},
 	{
 		func: addLink,
 		name: "Sky's Assorted Sweets",
 		description: "A Minecraft Mod featuring Small to Medium tweaks",
 		link: "https://github.com/skykittenpuppy/Skys-Assorted-Sweets",
-		tags: ["Mod", "WIP"],
+		tags: ["Mod", "", "WIP"],
 	},
 	{
 		func: addLink,
 		name: "Community Life Series",
 		description: "A Minecraft Data-Pack that aims to recreate the mechanics of the youtube Life Series SMP",
 		link: "https://github.com/skykittenpuppy/Community-Life-Series-Datapack",
-		tags: ["Datapack", "Abandoned"],
+		tags: ["Datapack", "", "Abandoned"],
 	},
 ];
 
@@ -108,7 +108,7 @@ function addZip(container, info){
 	container.appendChild(link);
 
 	let tags = document.createElement("b");
-	tags.innerText = info.tags[1] ?? "";
+	tags.innerText = info.tags[2] ?? "";
 	tags.classList = "projectTags"
 	container.appendChild(tags)
 
@@ -136,7 +136,7 @@ function addLink(container, info){
 	container.appendChild(link);
 
 	let tags = document.createElement("b");
-	tags.innerText = info.tags[1] ?? "";
+	tags.innerText = info.tags[2] ?? "";
 	tags.classList = "projectTags"
 	container.appendChild(tags)
 
