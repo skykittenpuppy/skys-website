@@ -7,13 +7,12 @@
 }
 .project{
 	display: grid;
-	background: #222;
+	background: #7847e6;
 	grid-template-areas:
-		"icon name tags"
-		"icon desc desc"
-		"other other other";
-	grid-template-columns: auto auto 1fr;
-	grid-template-rows: auto 1fr auto;
+		"icon name"
+		"icon desc";
+	grid-template-columns: auto 1fr;
+	grid-template-rows: auto 1fr;
 	border-radius: 16px;
 	padding: 8px;
 	gap: 8px;
@@ -27,30 +26,21 @@
 }
 .projectName{
 	grid-area: name;
+	display: flex;
+	gap: 8px;
+}
+.projectName > p{
 	text-decoration: underline;
 	font-size: xx-large;
 	color: cyan;
+	margin-block: 0;
 }
-.directDownload::after{
-	content: " 📥";
-	font-size: medium;
-}
-.externalLink::after{
-	content: " 🔗";
-	font-size: medium;
-}
-.projectTags{
-	grid-area: tags;
-	text-decoration: underline dotted;
-	font-size: x-large;
-	color: red;
-	margin-top: auto;
+.projectName > img{
+	aspect-ratio: 1/1;
+	height: 40px;
+	margin-block: auto;
 }
 .projectDesc{
 	grid-area: desc;
-	margin: 4px;
-}
-.projectOther{
-	grid-area: other;
 	margin: 4px;
 }

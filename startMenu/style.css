@@ -114,10 +114,10 @@
         0px  1px 2px 0px rgba(255, 255, 255, 0.8), /* external highlight */
         0px -1px 2px 0px rgba(  0,   0,   0, 0.8); /* external shadow */
 }
-.Home #HomeButton,
-.OCs #OCsButton,
-.Art #ArtButton,
-.Projects #ProjectsButton {
+.nothing #HomeButton,
+.nothing #OCsButton,
+.nothing #ArtButton,
+.nothing #ProjectsButton { /*If page is selected...*/
     background: linear-gradient(90deg in oklab, var(--buttons-select) 25%, var(--buttons-alt) 100%);
 }
 .startMenu .icon{
