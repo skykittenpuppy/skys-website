@@ -67,12 +67,14 @@ volume.addEventListener("input", (event) => {
 
 function updatePlayer() {
 	var data = player.getVideoData()
+	console.log(data);
 
 	thumbLink.href = player.getVideoUrl();
 	
 	thumbImg.src = data.video_id ? "https://i3.ytimg.com/vi/"+data.video_id+"/hqdefault.jpg" : "../Images/cloud.PNG";
 	
 	title.innerText = data.title || "Loading...";
+	title.href = "https://youtu.be/"+data.video_id || "";
 	
 	var dur = Math.floor(player.getDuration())
 	duration.innerText = Math.floor(dur/60)+":"+(dur%60).toString().padStart(2, '0');

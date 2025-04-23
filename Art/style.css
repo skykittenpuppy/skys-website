@@ -9,7 +9,6 @@
     inset 0  1px 2px 1px rgba(255, 255, 255, 0.6), /* internal highlight */
         0px  1px 2px 0px rgba(255, 255, 255, 0.8), /* external highlight */
         0px -1px 2px 0px rgba(  0,   0,   0, 0.8); /* external shadow */
-	/*overflow: hidden;*/
 	display: grid;
 	grid-template-rows: auto auto;
 }
