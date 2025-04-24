@@ -12,5 +12,5 @@ document.querySelector("#ProjectsButton").addEventListener("click", (event) => {
 })
 
 function closeWindow(){
-	window.history.pushState("", document.title, window.location.pathname);
+	window.location.hash = '';
 }

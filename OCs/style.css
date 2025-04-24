@@ -1,15 +1,4 @@
 #OCs .content{
-    grid-area: content;
-    background: white;
-	margin-top: 12px;
-	padding: 8px;
-	gap: 8px;
-    border-radius: 4px;
-    box-shadow:
-    inset 0 -1px 2px 1px rgba(  0,   0,   0, 0.6), /* internal shadow */
-    inset 0  1px 2px 1px rgba(255, 255, 255, 0.6), /* internal highlight */
-        0px  1px 2px 0px rgba(255, 255, 255, 0.8), /* external highlight */
-        0px -1px 2px 0px rgba(  0,   0,   0, 0.8); /* external shadow */
     align-content: center;
     text-align: center;
     font-size: 96px;

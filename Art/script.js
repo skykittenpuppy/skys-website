@@ -1,6 +1,17 @@
-const carouselMain = document.querySelector("#carouselMain");
-const carouselOther = document.querySelector("#carouselOther");
-const artPicker = document.querySelector("#artPicker");
+const artSection = document.getElementById("Art").getElementsByClassName("content")[0];
+let artCarousel = document.createElement("div");
+artCarousel.className = "artCarousel";
+let carouselMain = document.createElement("img");
+carouselMain.className = "carouselMain";
+artCarousel.appendChild(carouselMain);
+let carouselOther = document.createElement("img");
+carouselOther.className = "carouselOther";
+artCarousel.appendChild(carouselOther);
+let artPicker = document.createElement("div");
+artPicker.className = "artPicker";
+artSection.appendChild(artCarousel);
+artSection.appendChild(artPicker);
+
 var fileList = [
 	"Tricky Trials",
 	"Jungle Explorers",

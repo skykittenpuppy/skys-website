@@ -1,48 +1,21 @@
-let mainSection = document.createElement("span");
-document.querySelector("#Projects").appendChild(mainSection);
+const projectSection = document.getElementById("Projects").getElementsByClassName("content")[0];
 
-var projList = [
-	{	
-		func: addModrinth
-	},
-	{
-		func: addGithub,
-		name: "Datapacker's Construct",
-		description: "A Minecraft Data-Pack version of the Tinker's Construct Mod!",
-		link: "https://github.com/skykittenpuppy/Datapackers-Construct",
-		favicon: "CDN/Projects/github.png",
-	},
-	{
-		func: addGithub,
-		name: "PlateUp! MC",
-		description: "A Minecraft Data-Pack that aims to recreate the game PlateUp!",
-		link: "https://github.com/skykittenpuppy/PlateUp-MC",
-		favicon: "CDN/Projects/github.png",
-	},
-	{
-		func: addGithub,
-		name: "Sky's Assorted Sweets",
-		description: "A Minecraft Mod featuring Small to Medium tweaks",
-		link: "https://github.com/skykittenpuppy/Skys-Assorted-Sweets",
-		favicon: "CDN/Projects/github.png",
-	},
-	{
-		func: addGithub,
-		name: "Community Life Series",
-		description: "A Minecraft Data-Pack that aims to recreate the mechanics of the youtube Life Series SMP",
-		link: "https://github.com/skykittenpuppy/Community-Life-Series-Datapack",
-		favicon: "CDN/Projects/github.png",
-	},
-];
+var prefetchedOpenGraphImageUrl = {
+	"Community-Life-Series-Datapack": JSON.stringify({"data": {"repository": {"openGraphImageUrl": "https://repository-images.githubusercontent.com/610039740/991156ed-0972-4fe3-851d-d17144b92f5e"}}}),
+	"Datapackers-Construct": JSON.stringify({"data": {"repository": {"openGraphImageUrl": "https://repository-images.githubusercontent.com/909895930/51f13431-2c6e-45b3-b24c-f813637ee003"}}}),
+	"PlateUp-MC": JSON.stringify({"data": {"repository": {"openGraphImageUrl": "https://repository-images.githubusercontent.com/786897199/245748e7-bff3-40c7-b982-7c228c8ce9e6"}}}),
+	"Skys-Assorted-Sweets": JSON.stringify({"data": {"repository": {"openGraphImageUrl": "https://repository-images.githubusercontent.com/821988591/31f1fd97-4e2c-444d-8b29-1283632f29d3"}}})
+}
 
-async function addModrinth(info) {
+async function addModrinth() {
 	const url = "https://api.modrinth.com/v2/user/skykittenpuppy/projects";
 	await fetch(url)
 	.then(async function(response) {
 	  	await response.json()
 		.then(async function(projects){
-			await projects.sort((a, b) => b.downloads - a.downloads)
-			.forEach(function(project){
+			await projects
+			.sort((a, b) => b.downloads - a.downloads)
+			.forEach(async function(project){
 				let container = document.createElement("div");
 				//container.style = "background-color: #"+project.color.toString(16)+";";
 				container.classList = "project";
@@ -69,27 +42,86 @@ async function addModrinth(info) {
 				container.appendChild(desc);
 
 				let stats = document.createElement("p");
-				stats.innerText = "📥 " + project.downloads + " ♥ " + project.followers;
+				stats.innerText = "📥 " + project.downloads + " ❤️ " + project.followers;
 				stats.classList = "projectStats";
 				container.appendChild(stats);
 			
-				mainSection.appendChild(container);
+				projectSection.appendChild(container);
 			});
 	  	});
 	}).catch(err => console.error(err));
 }
 
-async function addGithub(info){
-	addLink(info)
+async function addGithub(){
+	const url = 'https://api.github.com/users/skykittenpuppy/repos';
+	await fetch(url)
+	.then(async function(response) {
+	  	await response.json()
+		.then(async function(repos){
+			await repos
+			.filter((a) => a.topics.includes("site-project"))
+			.sort((a, b) => b.watchers_count - a.watchers_count)
+			.forEach(async function(repo){
+				console.log(repo);
+				let container = document.createElement("div");
+				container.classList = "project";
+
+				/*let response2 = await fetch("https://api.github.com/graphql", {
+					method: "POST",
+					headers: {
+						"Content-Type": "application/json"
+					},
+					body: JSON.stringify(`{
+						query: {
+							repository(owner: "`+repo.owner.login+`", name: "`+repo.name+`") {
+								openGraphImageUrl
+							}
+						}
+					}`)
+				})
+				await response2.json()
+				.then(async function(data){*/
+					data = JSON.parse(prefetchedOpenGraphImageUrl[repo.name]);
+					let icon = document.createElement("img");
+					icon.src = data.data.repository.openGraphImageUrl;
+					icon.classList = "projectIcon";
+					container.appendChild(icon);
+				//})
+
+				let link = document.createElement("a");
+				link.innerText = repo.name;
+				link.href = repo.html_url;
+				link.classList = "projectName";
+				container.appendChild(link);
+			
+				let favicon = document.createElement("img");
+				favicon.src = "CDN/Projects/github.png";
+				favicon.classList = "projectFavicon";
+				container.appendChild(favicon);
+			
+				let desc = document.createElement("p");
+				desc.innerText = repo.description;
+				desc.classList = "projectDesc";
+				container.appendChild(desc);
+
+				let stats = document.createElement("p");
+				stats.innerText = "👀 " + repo.watchers_count + " ⭐ " + repo.stargazers_count;
+				stats.classList = "projectStats";
+				container.appendChild(stats);
+			
+				projectSection.appendChild(container);
+			});
+	  	});
+	}).catch(err => console.error(err));
 }
 
-function addLink(info){
-	let container = document.createElement("div")
+/*function addLink(info){
+	let container = document.createElement("div");
 	container.classList = "project";
 
 	let icon = document.createElement("img");
 	icon.src = "../CDN/Projects/"+info.name+".png";
-	icon.classList = "projectIcon"
+	icon.classList = "projectIcon";
 	container.appendChild(icon);
 
 	let link = document.createElement("a");
@@ -105,15 +137,13 @@ function addLink(info){
 
 	let desc = document.createElement("p");
 	desc.innerText = info.description;
-	desc.classList = "projectDesc"
+	desc.classList = "projectDesc";
 	container.appendChild(desc);
 
-	mainSection.appendChild(container);
-}
+	projectSection.appendChild(container);
+}*/
 
-async function setUp(){
-	for (let proj in projList) {
-		await projList[proj].func(projList[proj]);
-	}
-}
-setUp()
+(async () => {
+	await addModrinth();
+	await addGithub();
+})();

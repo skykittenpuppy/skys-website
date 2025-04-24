@@ -1,35 +1,25 @@
 #Art .content{
-    grid-area: content;
-    background: white;
-	margin-top: 12px;
-	gap: 8px;
-    border-radius: 4px;
-    box-shadow:
-    inset 0 -1px 2px 1px rgba(  0,   0,   0, 0.6), /* internal shadow */
-    inset 0  1px 2px 1px rgba(255, 255, 255, 0.6), /* internal highlight */
-        0px  1px 2px 0px rgba(255, 255, 255, 0.8), /* external highlight */
-        0px -1px 2px 0px rgba(  0,   0,   0, 0.8); /* external shadow */
 	display: grid;
 	grid-template-rows: auto auto;
 }
-#artCarousel{
+.artCarousel{
 	display: grid;
 	color: black;
 	grid-template-columns: auto 0px;
 	align-items: center;
 	justify-content: center;
 }
-#artCarousel #carouselMain{
+.artCarousel .carouselMain{
 	width: 80%;
 	object-fit: cover;
 	justify-self: center;
 	align-self: center;
 }
-#artCarousel #carouselOther{
+.artCarousel .carouselOther{
 	width: 0px;
 	height: 0px;
 }
-#artPicker{
+.artPicker{
 	width: 100%;
 	display: flex;
 	gap: 8px;
@@ -37,14 +27,14 @@
 	justify-content: center;
 	flex-wrap: wrap;
 }
-#artPicker button{
+.artPicker button{
 	border: none;
 	padding: 0;
 	min-width: 128px;
 	width: 10%;
 	cursor: pointer;
 }
-#artPicker img{
+.artPicker img{
 	width: 100%;
 	aspect-ratio: 16/9;
 	object-fit: cover;

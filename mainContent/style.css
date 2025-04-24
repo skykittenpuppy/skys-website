@@ -1,3 +1,20 @@
+#Home .content,
+#OCs .content,
+#Art .content,
+#Projects .content {
+    grid-area: content;
+    background: white;
+    margin-top: calc(var(--window-padding) / 2);
+    border-radius: 24px;
+	padding: 8px;
+	gap: 8px;
+    box-shadow:
+    inset 0 -1px 2px 1px rgba(  0,   0,   0, 0.6), /* internal shadow */
+    inset 0  1px 2px 1px rgba(255, 255, 255, 0.6), /* internal highlight */
+        0px  1px 2px 0px rgba(255, 255, 255, 0.8), /* external highlight */
+        0px -1px 2px 0px rgba(  0,   0,   0, 0.8); /* external shadow */
+}
+
 .mainContent {
     position: relative;
     margin: 32px;
@@ -15,6 +32,7 @@
     height: calc(100% - var(--window-padding) - var(--window-padding));
     width: calc(100% - var(--window-padding) - var(--window-padding));
     padding: var(--window-padding);
+    padding-top: calc(var(--window-padding) / 2);
     display: grid;
     grid-template-areas:
         "header"
@@ -55,10 +73,10 @@
 
 .header {
     grid-area: header;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    display: grid;
     align-items: center;
+    grid-template-columns: auto 1fr auto;
+    gap: 8px;
     font-size: large;
     text-shadow: black 0 0 0.2em;
 }
@@ -67,7 +85,7 @@
     font-size: 1.2em;
     user-select: none;
     display: flex;
-    gap: 1px;
+    gap: 2px;
 }
 .header .icon > * {
     font-family: "icons";
@@ -79,6 +97,180 @@
     border-radius: var(--header-icon-radius);
     text-align: center;
     cursor: pointer;
+    box-shadow:
+    inset 0 -1px 2px 0px rgba(  0,   0,   0, 0.6), /* internal shadow */
+    inset 0  1px 2px 0px rgba(255, 255, 255, 0.6), /* internal highlight */
+        0px  1px 2px 0px rgba(255, 255, 255, 0.8), /* external highlight */
+        0px -1px 2px 0px rgba(  0,   0,   0, 0.8); /* external shadow */
+}
+
+/* START MENU */
+
+.startMenu {
+    --menu-padding: 12px;
+    --icon-radius: 8px;
+    --icon-size: 64px;
+    --badge-count: 3;
+    --badge-width: 88px;
+    --badge-height: 31px;
+    --badge-gap: 1px;    
+    --subtle-radius: 4px;
+
+    --menu-bg:        rgba(  0, 255, 255, 0.20);
+    --menu-text:      rgba(255, 255, 255, 1.00);
+    --buttons-select: rgba(255,   0, 255, 0.75);
+    --buttons-main:   rgba(255,   0, 255, 0.35);
+    --buttons-alt:    rgba(255,   0, 255, 0.05);
+
+    --overflow: 32px;
+
+    /*overflow: hidden;*/
+    padding-top: calc(1 * calc(var(--overflow) - calc(var(--menu-padding) / 2)));
+    padding-bottom: calc(1 * calc(var(--overflow) - calc(var(--menu-padding) / 2)));
+    margin-top: calc(-1 * calc(var(--overflow) - calc(var(--menu-padding) / 2)));
+    margin-left: calc(-1 * calc(var(--overflow) - calc(var(--menu-padding) / 2)));
+    margin-bottom: calc(-1 * calc(var(--overflow) - calc(var(--menu-padding) / 2)));
+    
+    display: grid;
+    grid-template-areas:
+        "user"
+        "buttons"
+        "badges"
+        "credits";
+    grid-template-columns: auto;
+    grid-template-rows: calc(var(--icon-size) + calc(2* var(--menu-padding))) 1fr auto auto;
+
+    color: var(--menu-text);
+    backdrop-filter: blur(8px);
+
+    box-shadow:
+        inset 0 0 3px 0px rgba(255, 255, 255, 0.4), /* internal highlight */
+        inset 0 0 3px 1px rgba(  0,   0,   0, 0.4), /* internal edge */
+        inset 0 0 3px 5px rgba(  0,   0,   0, 0.1), /* internal shadow */
+          2px 2px 4px 3px rgba(  0,   0,   0, 0.3); /* external shadow */
+}
+
+.user {
+    align-self: flex-start;
+    display: flex;
+    flex-direction: row;
+    gap: calc(var(--menu-padding) / 2);
+
+    background-color: var(--menu-bg);
+    padding: var(--menu-padding);
+    padding-left: calc(1 * calc(var(--overflow) + calc(var(--menu-padding) / 2)));
+    border-radius: 0 0 var(--subtle-radius) 0;
+
+    box-shadow:
+    inset 0 -1px 2px 0px rgba(  0,   0,   0, 0.6), /* internal shadow */
+    inset 0  1px 2px 0px rgba(255, 255, 255, 0.6), /* internal highlight */
+        0px  1px 2px 0px rgba(255, 255, 255, 0.8), /* external highlight */
+        0px -1px 2px 0px rgba(  0,   0,   0, 0.8); /* external shadow */
+}
+.usericon {
+    height: var(--icon-size);
+    width: var(--icon-size);
+    border-radius: var(--icon-radius);
+    background-image: url(../CDN/Resources/usericon.png);
+    background-size: cover;
+    box-shadow:
+    inset 0 -1px 2px 1px rgba(  0,   0,   0, 0.6), /* internal shadow */
+    inset 0  1px 2px 1px rgba(255, 255, 255, 0.6), /* internal highlight */
+        0px  1px 2px 0px rgba(255, 255, 255, 0.8), /* external highlight */
+        0px -1px 2px 0px rgba(  0,   0,   0, 0.8); /* external shadow */
+}
+.username {
+    align-self: center;
+    justify-self: start;
+    text-shadow: black 0 0 0.2em;
+}
+
+.buttons {
+    grid-area: buttons;
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: var(--menu-padding);
+    padding: 0px;
+    display: flex;
+    flex-direction: column;
+
+
+    overflow: none;
+    border-radius: 0 var(--subtle-radius) var(--subtle-radius) 0;
+    box-shadow:
+    inset 0  0px 2px 1px rgba(  0,   0,   0, 0.6), /* internal shadow */
+        0px  1px 2px 0px rgba(255, 255, 255, 0.8), /* external highlight */
+        0px -1px 2px 0px rgba(  0,   0,   0, 0.8); /* external shadow */
+}
+.button {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 8px;
+
+    cursor: pointer;
+    color: var(--menu-text);
+    text-shadow: black 0 0 0.2em;
+    font-size: 1.5em;
+    padding: 4px;
+    padding-left: calc(1 * calc(var(--overflow) + calc(var(--menu-padding) / 2)));
+    border: 0;
+    
+    background: linear-gradient(90deg in oklab, var(--buttons-main) 0%, var(--buttons-alt) 100%);
+    box-shadow:
+    inset 0 -1px 2px 0px rgba(  0,   0,   0, 0.6), /* internal shadow */
+    inset 0  1px 2px 0px rgba(255, 255, 255, 0.6), /* internal highlight */
+        0px  1px 2px 0px rgba(255, 255, 255, 0.8), /* external highlight */
+        0px -1px 2px 0px rgba(  0,   0,   0, 0.8); /* external shadow */
+}
+.nothing #HomeButton,
+.nothing #OCsButton,
+.nothing #ArtButton,
+.nothing #ProjectsButton { /*If page is selected...*/
+    background: linear-gradient(90deg in oklab, var(--buttons-select) 25%, var(--buttons-alt) 100%);
+}
+.startMenu .icon{
+    font-family: "icons";
+    font-size: 1.5em;
+}
+
+.badges {
+    grid-area: badges;
+    width: calc(calc(var(--badge-width) + var(--badge-gap)) * var(--badge-count));
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+    gap: var(--badge-gap);
+
+    background-color: var(--menu-bg);
+    padding: var(--menu-padding);
+    padding-left: calc(1 * calc(var(--overflow) + calc(var(--menu-padding) / 2)));
+    border-radius: 0 var(--subtle-radius) var(--subtle-radius) 0;
+
+    box-shadow:
+    inset 0 -1px 2px 0px rgba(  0,   0,   0, 0.6), /* internal shadow */
+    inset 0  1px 2px 0px rgba(255, 255, 255, 0.6), /* internal highlight */
+        0px  1px 2px 0px rgba(255, 255, 255, 0.8), /* external highlight */
+        0px -1px 2px 0px rgba(  0,   0,   0, 0.8); /* external shadow */
+}
+.badges a>* {
+	height: var(--badge-height);
+	width: var(--badge-width);
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.credits {
+    grid-area: credits;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+
+    background-color: var(--menu-bg);
+    padding: var(--menu-padding);
+    padding-left: calc(1 * calc(var(--overflow) + calc(var(--menu-padding) / 2)));
+    border-radius: 0 var(--subtle-radius) 0 0;
+
     box-shadow:
     inset 0 -1px 2px 0px rgba(  0,   0,   0, 0.6), /* internal shadow */
     inset 0  1px 2px 0px rgba(255, 255, 255, 0.6), /* internal highlight */

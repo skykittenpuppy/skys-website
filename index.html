@@ -1,27 +1,25 @@
 <html>
     <head>
+        <!--STANDARD-->
         <title>the sky</title>
         <link rel="icon" type="image/x-icon" href="CDN/Resources/Favicon.png">
         <link rel="stylesheet" href="CDN/Resources/style.css">
-        
+        <!--MUSIC PLAYER-->
         <script async src="https://www.youtube.com/iframe_api"></script>
         <script defer src="musicPlayer/script.js"></script>
         <link rel="stylesheet" href="musicPlayer/style.css">
-
-        <link rel="stylesheet" href="startMenu/style.css">
-
+        <!--MAIN STUFF-->
         <script defer src="mainContent/script.js"></script>
         <link rel="stylesheet" href="mainContent/style.css">
-
-        <!--<script defer src="Home/script.js"></script>-->
+        <!--HOME-->
         <link rel="stylesheet" href="Home/style.css">
-
-        <!--<script defer src="OCs/script.js"></script>-->
+        <!--OCs-->
+        <script defer src="OCs/script.js"></script>
         <link rel="stylesheet" href="OCs/style.css">
-
+        <!--ART-->
         <script defer src="Art/script.js"></script>
         <link rel="stylesheet" href="Art/style.css">
-
+        <!--PROJECTS-->
         <script defer src="Projects/script.js"></script>
         <link rel="stylesheet" href="Projects/style.css">
     </head>
@@ -56,11 +54,11 @@
             <span class="buttons">
                 <button id="HomeButton" class="button">
                     <span class="icon">0</span>
-                    <b>Home (WIP)</b>
+                    <b>Home</b>
                 </button>
                 <button id="OCsButton" class="button">
                     <span class="icon">1</span>
-                    <b>OCs (WIP)</b>
+                    <b>OCs</b>
                 </button>
                 <button id="ArtButton" class="button">
                     <span class="icon">2</span>
@@ -72,17 +70,23 @@
                 </button>
             </span>
             <span class="badges">
-                <a href="https://sv-catgirl1.itch.io/">
+                <a href="https://bsky.app/profile/svcatgirl1.bsky.social">
                     <img src="CDN/Badges/kitty.png" title="🩷 🩷">
                 </a>
                 <a href="https://worldendingbumble.carrd.co/">
                     <img src="CDN/Badges/bees.png" title="💛 💛">
                 </a>
-                <a>
+                <a href="https://bsky.app/profile/anawesomedudette.bsky.social">
                     <img src="CDN/Badges/azalea.png" title="💙 🧡">
                 </a>
+                <a href="https://bsky.app/profile/skykittenpuppy.bsky.social">
+                    <img src="CDN/Badges/bluesky.png" title="💜 💜">
+                </a>
                 <a href="https://www.beegirl.gay/">
-                    <img src="CDN/Badges/sky.png" title="this site!">
+                    <img src="CDN/badge.png" title="this site!">
+                </a>
+                <a href="https://marlee-goat.neocities.org">
+                    <img src="CDN/Badges/marlee-goat.gif" title="funny">
                 </a>
                 <a href="https://oat.zone/">
                     <img src="CDN/Badges/OatZone.gif" title="modded with it once">
@@ -93,8 +97,8 @@
                 <a href="https://ilwag.com">
                     <img src="CDN/Badges/ILWAG.png" title="cool music">
                 </a>
-                <a href="https://marlee-goat.neocities.org">
-                    <img src="CDN/Badges/marlee-goat.gif" title="funny">
+                <a href="https://spootymaniacs.gay/">
+                    <img src="CDN/Badges/spootymaniacs.gif" title="made bsky badge">
                 </a>
                 <a href="https://versary.town">
                     <img src="CDN/Badges/VersaryTown.png" title="amazing website &#60;3">
@@ -114,6 +118,12 @@
                 <a>
                     <img src="CDN/Badges/ProgrammerSocks.png" title="they comfy">
                 </a>
+                <a href="https://godotengine.org">
+                    <img src="CDN/Badges/godot.png" title="good engine">
+                </a>
+                <a>
+                    <img src="CDN/Badges/transyourgender.gif" title="true!">
+                </a>
                 <a href="https://meow.social/@voltbun/109600348286574222">
                     <img src="CDN/Badges/xenia.png" title="xenia my beloved">
                 </a>
@@ -127,10 +137,16 @@
                     <img src="CDN/Badges/FreeMusicNow.png" title="Lucida.to">
                 </a>
                 <a>
+                    <img src="CDN/Badges/cssdif.gif" title=":<">
+                </a>
+                <a>
                     <img src="CDN/Badges/Kitten.gif" title="mew :3">
                 </a>
                 <a href="http://www.mabsland.com">
                     <img src="CDN/Badges/CensorMA.gif" title="cool rating badges">
+                </a>
+                <a href="https://eightyeightthirty.one">
+                    <img src="CDN/Badges/88x31.png" title="graphs waow">
                 </a>
             </span>
             <span class="credits">
@@ -143,7 +159,8 @@
         <span class="mainContent">
             <span id="Home" class="contentWindow">
                 <div class="header">
-                    <b>Home (WIP)</b>
+                    <span class="icon">0</span>
+                    <b>Home</b>
                     <span class="icon">
                         <button onclick="closeWindow()">-</button>
                         <button>+</button>
@@ -156,7 +173,8 @@
             </span>
             <span id="OCs" class="contentWindow">
                 <div class="header">
-                    <b>OCs (WIP)</b>
+                    <span class="icon">1</span>
+                    <b>OCs</b>
                     <span class="icon">
                         <button onclick="closeWindow()">-</button>
                         <button>+</button>
@@ -164,11 +182,11 @@
                     </span>
                 </div>
                 <div class="content">
-                    WIP
                 </div>
             </span>
             <span id="Art" class="contentWindow">
                 <div class="header">
+                    <span class="icon">2</span>
                     <b>Art</b>
                     <span class="icon">
                         <button onclick="closeWindow()">-</button>
@@ -177,22 +195,19 @@
                     </span>
                 </div>
                 <div class="content">
-                    <div id="artCarousel">
-                        <img id="carouselMain">
-                        <img id="carouselOther">
-                    </div>
-                    <div id="artPicker">
-                    </div>
                 </div>
             </span>
             <span id="Projects" class="contentWindow">
                 <div class="header">
-                    <b>Projects (WIP)</b>
+                    <span class="icon">3</span>
+                    <b>Projects</b>
                     <span class="icon">
                         <button onclick="closeWindow()">-</button>
                         <button>+</button>
                         <button onclick="closeWindow()">*</button>
                     </span>
+                </div>
+                <div class="content">
                 </div>
             </span>
         </span>
