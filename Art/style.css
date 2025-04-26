@@ -1,42 +1,40 @@
 #Art .content{
-	display: grid;
-	grid-template-rows: auto auto;
-}
-.artCarousel{
-	display: grid;
+	height: calc(100% - calc(8px *  2) - calc(var(--window-padding) / 2));
 	color: black;
-	grid-template-columns: auto 0px;
-	align-items: center;
-	justify-content: center;
+	display: grid;
+	grid-template-areas: 
+		"left art right"
+		"name name name";
+	grid-template-columns: auto 1fr auto;
+	grid-template-rows: 1fr auto;
 }
-.artCarousel .carouselMain{
-	width: 80%;
-	object-fit: cover;
-	justify-self: center;
-	align-self: center;
-}
-.artCarousel .carouselOther{
-	width: 0px;
-	height: 0px;
-}
-.artPicker{
-	width: 100%;
+.contentHolder {
+	container-type: size;
 	display: flex;
-	gap: 8px;
-	align-content: center;
-	justify-content: center;
-	flex-wrap: wrap;
-}
-.artPicker button{
-	border: none;
-	padding: 0;
-	min-width: 128px;
-	width: 10%;
-	cursor: pointer;
-}
-.artPicker img{
+	height: 100%;
 	width: 100%;
-	aspect-ratio: 16/9;
-	object-fit: cover;
+}
+.contentHolder>*{
+	object-fit: contain;
+	max-height: 100cqh;
+	max-width: 100cqw;
+	margin: auto;
+}
+.moveButtons {
+	border: black 2px solid;
+	align-content: center;
+	text-align: center;
+	height: 4rem;
+	width: 4rem;
+	font-size: xx-large;
+	font-weight: bold;
 	cursor: pointer;
+	margin: auto;
+}
+.nameHolder {
+	grid-area: name;
+	align-content: center;
+	text-align: center;
+	font-size: 4em;
+	margin: auto;
 }

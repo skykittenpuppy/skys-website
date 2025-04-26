@@ -62,7 +62,6 @@ async function addGithub(){
 			.filter((a) => a.topics.includes("site-project"))
 			.sort((a, b) => b.watchers_count - a.watchers_count)
 			.forEach(async function(repo){
-				console.log(repo);
 				let container = document.createElement("div");
 				container.classList = "project";
 
