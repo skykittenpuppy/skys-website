@@ -66,16 +66,16 @@ const artList = [
 		date: new Date("10 August 2022"),
 	},
 	{
-		file: "Minecraft PS1 - Menu.mp4",
-		name: "Menu",
+		file: "Minecraft PS1 - House.mp4",
+		name: "House (Remastered)",
 		group: Group.PS1,
-		date: new Date("06 February 2024"),
+		date: new Date("04 May 2025"),
 	},
 	{
 		file: "Minecraft PS1 - Chest.mp4",
-		name: "Chest",
+		name: "Chest (Remastered)",
 		group: Group.PS1,
-		date: new Date("08 February 2024"),
+		date: new Date("05 May 2025"),
 	},
 	{
 		file: "Minecraft PS1 - Pale Garden.mp4",
