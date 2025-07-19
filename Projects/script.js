@@ -3,8 +3,9 @@ const projectSection = document.getElementById("Projects").getElementsByClassNam
 var prefetchedOpenGraphImageUrl = {
 	"Community-Life-Series-Datapack": JSON.stringify({"data": {"repository": {"openGraphImageUrl": "https://repository-images.githubusercontent.com/610039740/991156ed-0972-4fe3-851d-d17144b92f5e"}}}),
 	"Datapackers-Construct": JSON.stringify({"data": {"repository": {"openGraphImageUrl": "https://repository-images.githubusercontent.com/909895930/51f13431-2c6e-45b3-b24c-f813637ee003"}}}),
+	"Datapack-Origins": JSON.stringify({"data": {"repository": {"openGraphImageUrl": "https://repository-images.githubusercontent.com/1022566910/b8c1f6fb-7dc9-4bda-8b4c-5134e975502d"}}}),
 	"PlateUp-MC": JSON.stringify({"data": {"repository": {"openGraphImageUrl": "https://repository-images.githubusercontent.com/786897199/245748e7-bff3-40c7-b982-7c228c8ce9e6"}}}),
-	"Skys-Assorted-Sweets": JSON.stringify({"data": {"repository": {"openGraphImageUrl": "https://repository-images.githubusercontent.com/821988591/31f1fd97-4e2c-444d-8b29-1283632f29d3"}}})
+	"Skys-Assorted-Sweets": JSON.stringify({"data": {"repository": {"openGraphImageUrl": "https://repository-images.githubusercontent.com/821988591/31f1fd97-4e2c-444d-8b29-1283632f29d3"}}}),
 }
 
 async function addModrinth() {
