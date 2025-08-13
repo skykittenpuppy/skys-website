@@ -1,11 +1,27 @@
 const projectSection = document.getElementById("Projects").getElementsByClassName("content")[0];
 
 var prefetchedOpenGraphImageUrl = {
-	"Community-Life-Series-Datapack": JSON.stringify({"data": {"repository": {"openGraphImageUrl": "https://repository-images.githubusercontent.com/610039740/991156ed-0972-4fe3-851d-d17144b92f5e"}}}),
-	"Datapackers-Construct": JSON.stringify({"data": {"repository": {"openGraphImageUrl": "https://repository-images.githubusercontent.com/909895930/51f13431-2c6e-45b3-b24c-f813637ee003"}}}),
-	"Datapack-Origins": JSON.stringify({"data": {"repository": {"openGraphImageUrl": "https://repository-images.githubusercontent.com/1022566910/b8c1f6fb-7dc9-4bda-8b4c-5134e975502d"}}}),
-	"PlateUp-MC": JSON.stringify({"data": {"repository": {"openGraphImageUrl": "https://repository-images.githubusercontent.com/786897199/245748e7-bff3-40c7-b982-7c228c8ce9e6"}}}),
-	"Skys-Assorted-Sweets": JSON.stringify({"data": {"repository": {"openGraphImageUrl": "https://repository-images.githubusercontent.com/821988591/31f1fd97-4e2c-444d-8b29-1283632f29d3"}}}),
+	"Community-Life-Series-Datapack": JSON.stringify({"data": {"repository": {"openGraphImageUrl": "\
+		https://repository-images.githubusercontent.com/610039740/b8a8383f-4981-4ccc-b7d8-0344b2f1208f\
+	"}}}),
+	"Datapack-Construct": JSON.stringify({"data": {"repository": {"openGraphImageUrl": "\
+		https://repository-images.githubusercontent.com/909895930/2550c775-637c-4eb1-9717-d17b256082a9\
+	"}}}),
+	"Datapack-Delight": JSON.stringify({"data": {"repository": {"openGraphImageUrl": "\
+		https://repository-images.githubusercontent.com/1025386411/ea04866d-7476-49a0-8aa7-303e97437211\
+	"}}}),
+	"Datapack-Origins": JSON.stringify({"data": {"repository": {"openGraphImageUrl": "\
+		https://repository-images.githubusercontent.com/1022566910/b9d43854-b502-48ad-b306-205a02ab841b\
+	"}}}),
+	"Datapack-Restauranteering": JSON.stringify({"data": {"repository": {"openGraphImageUrl": "\
+		https://repository-images.githubusercontent.com/786897199/3a45b31d-1aed-4094-b0f0-6ac255974a5b\
+	"}}}),
+	"Datapack-Royale": JSON.stringify({"data": {"repository": {"openGraphImageUrl": "\
+		https://repository-images.githubusercontent.com/1037371813/a67545e1-ab6c-4c3b-9dab-9f24b1150ca8\
+	"}}}),
+	"Skys-Assorted-Sweets": JSON.stringify({"data": {"repository": {"openGraphImageUrl": "\
+		https://repository-images.githubusercontent.com/821988591/d2a22092-1634-48b2-9394-a6c65af0a340\
+	"}}}),
 }
 
 async function addModrinth() {
