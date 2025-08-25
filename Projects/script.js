@@ -22,6 +22,9 @@ var prefetchedOpenGraphImageUrl = {
 	"Skys-Assorted-Sweets": JSON.stringify({"data": {"repository": {"openGraphImageUrl": "\
 		https://repository-images.githubusercontent.com/821988591/d2a22092-1634-48b2-9394-a6c65af0a340\
 	"}}}),
+	"Skys-Sky-Islands": JSON.stringify({"data": {"repository": {"openGraphImageUrl": "\
+		https://repository-images.githubusercontent.com/1042548473/5e1568d2-633e-46ac-b9fd-2374431567d5\
+	"}}}),
 }
 
 async function addModrinth() {
