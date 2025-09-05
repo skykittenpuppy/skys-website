@@ -10,6 +10,9 @@ var prefetchedOpenGraphImageUrl = {
 	"Datapack-Delight": JSON.stringify({"data": {"repository": {"openGraphImageUrl": "\
 		https://repository-images.githubusercontent.com/1025386411/ea04866d-7476-49a0-8aa7-303e97437211\
 	"}}}),
+	"Datapack-Decor": JSON.stringify({"data": {"repository": {"openGraphImageUrl": "\
+		https://repository-images.githubusercontent.com/1051348656/a160c6a9-6c9b-4b7b-b77c-6cd20a5192e1\
+	"}}}),
 	"Datapack-Origins": JSON.stringify({"data": {"repository": {"openGraphImageUrl": "\
 		https://repository-images.githubusercontent.com/1022566910/b9d43854-b502-48ad-b306-205a02ab841b\
 	"}}}),
@@ -19,6 +22,7 @@ var prefetchedOpenGraphImageUrl = {
 	"Datapack-Royale": JSON.stringify({"data": {"repository": {"openGraphImageUrl": "\
 		https://repository-images.githubusercontent.com/1037371813/a67545e1-ab6c-4c3b-9dab-9f24b1150ca8\
 	"}}}),
+
 	"Skys-Assorted-Sweets": JSON.stringify({"data": {"repository": {"openGraphImageUrl": "\
 		https://repository-images.githubusercontent.com/821988591/d2a22092-1634-48b2-9394-a6c65af0a340\
 	"}}}),
