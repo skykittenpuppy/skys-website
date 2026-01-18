@@ -106,9 +106,7 @@ const artList = [
 let selected = 0;
 
 function swapTo(index) {
-	console.log(index);
 	let info = artList[index];
-	console.log(info);
 	if (info.file.endsWith(".mp4")){
 		contentHolder.innerHTML = `<video muted autoplay loop> <source src="CDN/Art/`+info.file+`" tye="video/mp4"> Your browser does not support the video tag. </video>`;
 	} else {

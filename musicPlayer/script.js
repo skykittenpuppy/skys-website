@@ -67,7 +67,6 @@ volume.addEventListener("input", (event) => {
 
 function updatePlayer() {
 	var data = player.getVideoData()
-	console.log(data);
 
 	thumbLink.href = player.getVideoUrl();
 	
