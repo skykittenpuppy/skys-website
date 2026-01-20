@@ -29,6 +29,10 @@ hytaleFavicon.src = "CDN/ProjectIcons/hytale.png";
 hytaleFavicon.classList = "projectFavicon hytale";
 
 var prefetchedOpenGraphImageUrl = {
+	"Hytale-Minecraftians": JSON.stringify({"data": {"repository": {"openGraphImageUrl": "\
+		CDN/ProjectIcons/MinecraftiansLogo.png\
+	"}}}),
+
 	"Community-Life-Series-Datapack": JSON.stringify({"data": {"repository": {"openGraphImageUrl": "\
 		https://repository-images.githubusercontent.com/610039740/b8a8383f-4981-4ccc-b7d8-0344b2f1208f\
 	"}}}),
@@ -59,15 +63,18 @@ var prefetchedOpenGraphImageUrl = {
 	"}}}),
 }
 
-async function addModrinth() {
+var projectList = []
+
+async function fetchModrinth() {
 	const url = "https://api.modrinth.com/v2/user/skykittenpuppy/projects";
 	await fetch(url)
 	.then(async function(response) {
 	  	await response.json()
 		.then(async function(projects){
 			await projects
-			.sort((a, b) => b.downloads - a.downloads)
 			.forEach(async function(project){
+				let sortTag = "Minecraft"
+
 				let bg = document.createElement("div");
 				bg.style = "--project-colour: #"+project.color.toString(16)+";";
 				bg.classList = "projectBg";
@@ -92,7 +99,10 @@ async function addModrinth() {
 				container.appendChild(favicons);
 				if (project.loaders.includes("minecraft")) favicons.appendChild(resourcePackFavicon.cloneNode());
 				if (project.loaders.includes("datapack")) favicons.appendChild(dataPackFavicon.cloneNode());
-				if (project.loaders.includes("fabric")) favicons.appendChild(fabricMCFavicon.cloneNode());
+				if (project.loaders.includes("fabric")){
+					favicons.appendChild(fabricMCFavicon.cloneNode());
+					sortTag = "Fabric";
+				}
 				favicons.appendChild(modrinthFavicon.cloneNode());
 			
 				let desc = document.createElement("p");
@@ -104,14 +114,18 @@ async function addModrinth() {
 				stats.innerText = "📥 " + project.downloads + " ❤️ " + project.followers;
 				stats.classList = "projectStats";
 				container.appendChild(stats);
-			
-				projectSection.appendChild(bg);
+
+				projectList.push({
+					element: bg,
+					sortTag: sortTag,
+					sortValue: 1000000+project.followers,
+				})
 			});
 	  	});
 	}).catch(err => console.error(err));
 }
 
-async function addGithub(){
+async function fetchGithub(){
 	const url = 'https://api.github.com/users/skykittenpuppy/repos';
 	await fetch(url)
 	.then(async function(response) {
@@ -119,8 +133,9 @@ async function addGithub(){
 		.then(async function(repos){
 			await repos
 			.filter((a) => a.topics.includes("site-project"))
-			.sort((a, b) => b.watchers_count - a.watchers_count)
 			.forEach(async function(repo){
+				let sortTag = ""
+
 				let bg = document.createElement("div");
 				bg.style = "--project-colour: #1b1f24;";
 				bg.classList = "projectBg";
@@ -144,11 +159,10 @@ async function addGithub(){
 				})
 				await response2.json()
 				.then(async function(data){*/
-					data = JSON.parse(prefetchedOpenGraphImageUrl[repo.name]);
 				//})
 
 				let icon = document.createElement("img");
-				icon.src = data.data.repository.openGraphImageUrl;
+				icon.src = "CDN/ProjectIcons/Github/"+repo.name+".png";
 				icon.classList = "projectIcon";
 				container.appendChild(icon);
 
@@ -161,8 +175,18 @@ async function addGithub(){
 				let favicons = document.createElement("div");
 				favicons.classList = "projectFavicons";
 				container.appendChild(favicons);
-				if (repo.topics.includes("minecraft-datapack")) favicons.appendChild(dataPackFavicon.cloneNode());
-				if (repo.topics.includes("fabric-mod")) favicons.appendChild(fabricMCFavicon.cloneNode());
+				if (repo.topics.includes("minecraft-datapack")){
+					favicons.appendChild(dataPackFavicon.cloneNode());
+					sortTag = "Minecraft";
+				}
+				if (repo.topics.includes("fabric-mod")){
+					favicons.appendChild(fabricMCFavicon.cloneNode());
+					sortTag = "Fabric";
+				}
+				if (repo.topics.includes("hytale")){
+					favicons.appendChild(hytaleFavicon.cloneNode());
+					sortTag = "Hytale";
+				}
 				favicons.appendChild(githubFavicon.cloneNode());
 			
 				let desc = document.createElement("p");
@@ -174,14 +198,18 @@ async function addGithub(){
 				stats.innerText = "👀 " + repo.watchers_count + " ⭐ " + repo.stargazers_count;
 				stats.classList = "projectStats";
 				container.appendChild(stats);
-			
-				projectSection.appendChild(bg);
+
+				projectList.push({
+					element: bg,
+					sortTag: sortTag,
+					sortValue: repo.stargazers_count,
+				})
 			});
 	  	});
 	}).catch(err => console.error(err));
 }
 
-async function addLink(info){
+function addLink(info){
 	let bg = document.createElement("div");
 	bg.style = "--project-colour: #f16436;";
 	bg.classList = "projectBg";
@@ -213,24 +241,39 @@ async function addLink(info){
 	desc.classList = "projectDesc";
 	container.appendChild(desc);
 
-	projectSection.appendChild(bg);
+	projectList.push({
+		element: bg,
+		sortTag: info.sortTag,
+		sortValue: info.sortValue,
+	})
+}
+"a".charCodeAt(0)
+function loadProjects(){
+	projectList.sort((a, b) => {
+		if (b.sortTag != a.sortTag){
+			if (b.sortTag == "Hytale") return 1
+			else if (a.sortTag == "Hytale") return -1
+			else if (b.sortTag == "Minecraft") return 1
+			else if (a.sortTag == "Minecraft") return -1
+			else return b.sortTag.charCodeAt(0) - a.sortTag.charCodeAt(0)
+		}
+		else return b.sortValue - a.sortValue
+	})
+	for (let project of projectList)
+		projectSection.appendChild(project.element)
 }
 
 (async () => {
-	await addLink({
+	await fetchModrinth();
+	await fetchGithub();
+	addLink({
 		name: "Armed With Ammo",
 		description: "Adds ammo and makes guns functional!",
-		icon: "https://media.forgecdn.net/avatars/thumbnails/1615/16/256/256/639040830140931649.png",
-		link: "https://www.curseforge.com/hytale/mods/minecraftians",
-		favicons: [hytaleFavicon, curseforgeFavicon],
-	});
-	await addLink({
-		name: "Minecraftians",
-		description: "Adds a set of Familiar tools and Nostalgic potions",
-		icon: "https://media.forgecdn.net/avatars/thumbnails/1615/136/256/256/639040873577348688.png",
+		icon: "https://media.forgecdn.net/avatars/thumbnails/1630/269/256/256/639045278596288956.png",
 		link: "https://www.curseforge.com/hytale/mods/armed-with-ammo",
 		favicons: [hytaleFavicon, curseforgeFavicon],
+		sortTag: "Hytale",
+		sortValue: -1000000,
 	});
-	await addModrinth();
-	await addGithub();
+	loadProjects();
 })();
