@@ -1,0 +1,3 @@
+[submodule "CDN/OCs"]
+	path = CDN/OCs
+	url = git@github.com:skykittenpuppy/OC-Info.git
