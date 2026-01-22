@@ -1,5 +1,5 @@
 #Projects .content{
-	grid-template-rows: auto auto;
+    background: rgba(192, 192, 192, 0.5);
 	display: flex;
 	flex-direction: column;
 	overflow-y: scroll;
@@ -7,13 +7,16 @@
 	gap: 8px;
 }
 
-.projectBg{
+.projectBackground{
 	background: var(--project-colour);
 	border-radius: 16px;
     box-shadow:
-          0px 0px 4px 2px rgba(  0,   0,   0, 0.5); /* external shadow */
+    inset 0 -1px 2px 0px rgba(  0,   0,   0, 0.6), /* internal shadow */
+    inset 0  1px 2px 0px rgba(255, 255, 255, 0.6), /* internal highlight */
+        0px  1px 2px 0px rgba(255, 255, 255, 0.8), /* external highlight */
+        0px -1px 2px 0px rgba(  0,   0,   0, 0.8); /* external shadow */
 }
-.project{
+.projectInner{
 	display: grid;
 	background: #7847e6;
 	grid-template-areas:
@@ -22,7 +25,6 @@
 		"icon stats stats";
 	grid-template-columns: auto 1fr auto;
 	grid-template-rows: auto 1fr auto;
-	/*border-left: 8px solid var(--project-colour);*/
 	border-radius: 16px;
 	margin-left: 8px;
 	padding: 8px;
@@ -32,7 +34,10 @@
 	grid-area: icon;
 	border-radius: 8px;
 	height: 128px;
-	box-shadow: 0 0 12px -2px black;
+    box-shadow:
+    inset 0 -1px 2px 0px rgba(  0,   0,   0, 0.6), /* internal shadow */
+        0px  1px 2px 0px rgba(255, 255, 255, 0.8), /* external highlight */
+        0px -1px 2px 0px rgba(  0,   0,   0, 0.8); /* external shadow */
 }
 .projectName{
 	grid-area: name;
@@ -44,6 +49,7 @@
 .projectFavicons{
 	grid-area: favicon;
 	display: flex;
+	flex-direction: row-reverse;
 	gap: 2px;
 	height: 40px;
 }
@@ -59,4 +65,13 @@
 .projectStats{
 	grid-area: stats;
 	margin: 4px;
+	padding: 4px;
+	padding-inline: 8px;
+	border-radius: 8px;
+	width: fit-content;
+	background-color: rgba( 64,  64,  64); 
+    box-shadow: 
+    inset 0 -1px 2px 0px rgba(  0,   0,   0, 0.6), /* internal shadow */
+        0px  1px 2px 0px rgba(255, 255, 255, 0.8), /* external highlight */
+        0px -1px 2px 0px rgba(  0,   0,   0, 0.8); /* external shadow */
 }

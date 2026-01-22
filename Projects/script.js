@@ -1,41 +1,24 @@
 const projectSection = document.getElementById("Projects").getElementsByClassName("content")[0];
 
-var curseforgeFavicon = document.createElement("img");
-curseforgeFavicon.src = "CDN/ProjectIcons/curseforge.png";
-curseforgeFavicon.classList = "projectFavicon curseforge";
+const Tags = Object.freeze({
+	MODRINTH: "Modrinth",
+	GITHUB: "Github",
+	CURSEFORGE: "Curseforge",
+	HYTALE: "Hytale",
+	MINECRAFT: "Minecraft",
+	DATAPACK: "Data-Pack",
+	RESOURCEPACK: "Resource-Pack",
+	FABRICMOD: "Fabric-Mod",
+})
 
-var githubFavicon = document.createElement("img");
-githubFavicon.src = "CDN/ProjectIcons/github.png";
-githubFavicon.classList = "projectFavicon github";
+const hytaleSortBonus = 2000000
+const modrinthSortBonus = 1000000
 
-var modrinthFavicon = document.createElement("img");
-modrinthFavicon.src = "CDN/ProjectIcons/modrinth.png";
-modrinthFavicon.classList = "projectFavicon modrinth";
-
-var resourcePackFavicon = document.createElement("img");
-resourcePackFavicon.src = "CDN/ProjectIcons/resourcePack.png";
-resourcePackFavicon.classList = "projectFavicon resourcePack";
-
-var dataPackFavicon = document.createElement("img");
-dataPackFavicon.src = "CDN/ProjectIcons/dataPack.png";
-dataPackFavicon.classList = "projectFavicon dataPack";
-
-var fabricMCFavicon = document.createElement("img");
-fabricMCFavicon.src = "CDN/ProjectIcons/fabricMC.png";
-fabricMCFavicon.classList = "projectFavicon fabricMC";
-
-var hytaleFavicon = document.createElement("img");
-hytaleFavicon.src = "CDN/ProjectIcons/hytale.png";
-hytaleFavicon.classList = "projectFavicon hytale";
-
-var prefetchedOpenGraphImageUrl = {
+const prefetchedOpenGraphImageUrl = {
 	"Hytale-Minecraftians": JSON.stringify({"data": {"repository": {"openGraphImageUrl": "\
 		CDN/ProjectIcons/MinecraftiansLogo.png\
 	"}}}),
 
-	"Community-Life-Series-Datapack": JSON.stringify({"data": {"repository": {"openGraphImageUrl": "\
-		https://repository-images.githubusercontent.com/610039740/b8a8383f-4981-4ccc-b7d8-0344b2f1208f\
-	"}}}),
 	"Datapack-Construct": JSON.stringify({"data": {"repository": {"openGraphImageUrl": "\
 		https://repository-images.githubusercontent.com/909895930/2550c775-637c-4eb1-9717-d17b256082a9\
 	"}}}),
@@ -65,6 +48,87 @@ var prefetchedOpenGraphImageUrl = {
 
 var projectList = []
 
+function projectElement(Link, Name, Icon, Description = "", Stats = "", Colour = "#FFFFFF", ProjTags = []){
+	let background = document.createElement("div");
+	background.style = "--project-colour: "+Colour+";";
+	background.classList = "projectBackground";
+
+	let inner = document.createElement("div");
+	inner.classList = "projectInner";
+	background.appendChild(inner);
+
+	let icon = document.createElement("img");
+	icon.src = Icon;
+	icon.classList = "projectIcon";
+	inner.appendChild(icon);
+
+	let name = document.createElement("a");
+	name.innerText = Name;
+	name.href = Link;
+	name.classList = "projectName";
+	inner.appendChild(name);
+
+	let favicons = document.createElement("div");
+	favicons.classList = "projectFavicons";
+	if (ProjTags.includes(Tags.MODRINTH)){
+		var favicon = document.createElement("img");
+		favicon.src = "CDN/ProjectIcons/modrinth.png";
+		favicon.classList = "projectFavicon";
+		favicons.appendChild(favicon)
+	}
+	if (ProjTags.includes(Tags.GITHUB)){
+		var favicon = document.createElement("img");
+		favicon.src = "CDN/ProjectIcons/github.png";
+		favicon.classList = "projectFavicon";
+		favicons.appendChild(favicon)
+	}
+	if (ProjTags.includes(Tags.CURSEFORGE)){
+		var favicon = document.createElement("img");
+		favicon.src = "CDN/ProjectIcons/curseforge.png";
+		favicon.classList = "projectFavicon";
+		favicons.appendChild(favicon)
+	}
+	if (ProjTags.includes(Tags.HYTALE)){
+		var favicon = document.createElement("img");
+		favicon.src = "CDN/ProjectIcons/hytale.png";
+		favicon.classList = "projectFavicon";
+		favicons.appendChild(favicon)
+	}
+	if (ProjTags.includes(Tags.DATAPACK)){
+		var favicon = document.createElement("img");
+		favicon.src = "CDN/ProjectIcons/dataPack.png";
+		favicon.classList = "projectFavicon";
+		favicons.appendChild(favicon)
+	}
+	if (ProjTags.includes(Tags.RESOURCEPACK)){
+		var favicon = document.createElement("img");
+		favicon.src = "CDN/ProjectIcons/resourcePack.png";
+		favicon.classList = "projectFavicon";
+		favicons.appendChild(favicon)
+	}
+	if (ProjTags.includes(Tags.FABRICMOD)){
+		var favicon = document.createElement("img");
+		favicon.src = "CDN/ProjectIcons/fabricMC.png";
+		favicon.classList = "projectFavicon";
+		favicons.appendChild(favicon)
+	}
+	if (favicons.childElementCount != 0) inner.appendChild(favicons);
+
+	let desc = document.createElement("p");
+	desc.innerText = Description;
+	desc.classList = "projectDesc";
+	inner.appendChild(desc);
+
+	if (Stats != ""){
+		let stats = document.createElement("p");
+		stats.innerText = Stats;
+		stats.classList = "projectStats";
+		inner.appendChild(stats);
+	}
+
+	return background;
+}
+
 async function fetchModrinth() {
 	const url = "https://api.modrinth.com/v2/user/skykittenpuppy/projects";
 	await fetch(url)
@@ -73,53 +137,27 @@ async function fetchModrinth() {
 		.then(async function(projects){
 			await projects
 			.forEach(async function(project){
-				let sortTag = "Minecraft"
-
-				let bg = document.createElement("div");
-				bg.style = "--project-colour: #"+project.color.toString(16)+";";
-				bg.classList = "projectBg";
-
-				let container = document.createElement("div");
-				container.classList = "project";
-				bg.appendChild(container);
-
-				let icon = document.createElement("img");
-				icon.src = project.icon_url;
-				icon.classList = "projectIcon";
-				container.appendChild(icon);
-
-				let link = document.createElement("a");
-				link.innerText = project.title;
-				link.href = "https://modrinth.com/"+project.project_type+"/"+project.slug;
-				link.classList = "projectName";
-				container.appendChild(link);
-			
-				let favicons = document.createElement("div");
-				favicons.classList = "projectFavicons";
-				container.appendChild(favicons);
-				if (project.loaders.includes("minecraft")) favicons.appendChild(resourcePackFavicon.cloneNode());
-				if (project.loaders.includes("datapack")) favicons.appendChild(dataPackFavicon.cloneNode());
-				if (project.loaders.includes("fabric")){
-					favicons.appendChild(fabricMCFavicon.cloneNode());
-					sortTag = "Fabric";
-				}
-				favicons.appendChild(modrinthFavicon.cloneNode());
-			
-				let desc = document.createElement("p");
-				desc.innerText = project.description;
-				desc.classList = "projectDesc";
-				container.appendChild(desc);
-
-				let stats = document.createElement("p");
-				stats.innerText = "📥 " + project.downloads + " ❤️ " + project.followers;
-				stats.classList = "projectStats";
-				container.appendChild(stats);
+				let tags = [];
+				if (project.loaders.includes("datapack"))
+					tags = [Tags.MODRINTH, Tags.MINECRAFT, Tags.DATAPACK];
+				else if (project.loaders.includes("minecraft"))
+					tags = [Tags.MODRINTH, Tags.MINECRAFT, Tags.RESOURCEPACK];
+				else if (project.loaders.includes("fabric"))
+					tags = [Tags.MODRINTH, Tags.MINECRAFT, Tags.FABRICMOD];
 
 				projectList.push({
-					element: bg,
-					sortTag: sortTag,
-					sortValue: 1000000+project.followers,
-				})
+					element: projectElement(
+						"https://modrinth.com/"+project.project_type+"/"+project.slug,
+						project.title,
+						project.icon_url,
+						project.description,
+						"📥 " + project.downloads + " ❤️ " + project.followers,
+						"#"+project.color.toString(16),
+						tags
+					),
+					tags: tags,
+					sortValue: project.followers + modrinthSortBonus,
+				});
 			});
 	  	});
 	}).catch(err => console.error(err));
@@ -134,146 +172,60 @@ async function fetchGithub(){
 			await repos
 			.filter((a) => a.topics.includes("site-project"))
 			.forEach(async function(repo){
-				let sortTag = ""
-
-				let bg = document.createElement("div");
-				bg.style = "--project-colour: #1b1f24;";
-				bg.classList = "projectBg";
-
-				let container = document.createElement("div");
-				container.classList = "project";
-				bg.appendChild(container);
-
-				/*let response2 = await fetch("https://api.github.com/graphql", {
-					method: "POST",
-					headers: {
-						"Content-Type": "application/json"
-					},
-					body: JSON.stringify(`{
-						query: {
-							repository(owner: "`+repo.owner.login+`", name: "`+repo.name+`") {
-								openGraphImageUrl
-							}
-						}
-					}`)
-				})
-				await response2.json()
-				.then(async function(data){*/
-				//})
-
-				let icon = document.createElement("img");
-				icon.src = "CDN/ProjectIcons/Github/"+repo.name+".png";
-				icon.classList = "projectIcon";
-				container.appendChild(icon);
-
-				let link = document.createElement("a");
-				link.innerText = repo.name;
-				link.href = repo.html_url;
-				link.classList = "projectName";
-				container.appendChild(link);
-			
-				let favicons = document.createElement("div");
-				favicons.classList = "projectFavicons";
-				container.appendChild(favicons);
-				if (repo.topics.includes("minecraft-datapack")){
-					favicons.appendChild(dataPackFavicon.cloneNode());
-					sortTag = "Minecraft";
-				}
-				if (repo.topics.includes("fabric-mod")){
-					favicons.appendChild(fabricMCFavicon.cloneNode());
-					sortTag = "Fabric";
-				}
-				if (repo.topics.includes("hytale")){
-					favicons.appendChild(hytaleFavicon.cloneNode());
-					sortTag = "Hytale";
-				}
-				favicons.appendChild(githubFavicon.cloneNode());
-			
-				let desc = document.createElement("p");
-				desc.innerText = repo.description;
-				desc.classList = "projectDesc";
-				container.appendChild(desc);
-
-				let stats = document.createElement("p");
-				stats.innerText = "👀 " + repo.watchers_count + " ⭐ " + repo.stargazers_count;
-				stats.classList = "projectStats";
-				container.appendChild(stats);
+				let tags = [];
+				if (repo.topics.includes("hytale"))
+					tags = [Tags.GITHUB, Tags.HYTALE]
+				if (repo.topics.includes("minecraft-datapack"))
+					tags = [Tags.GITHUB, Tags.MINECRAFT, Tags.DATAPACK];
+				else if (repo.topics.includes("minecraft-resourcepack"))
+					tags = [Tags.GITHUB, Tags.MINECRAFT, Tags.RESOURCEPACK];
+				else if (repo.topics.includes("fabric-mod"))
+					tags = [Tags.GITHUB, Tags.MINECRAFT, Tags.FABRICMOD];
 
 				projectList.push({
-					element: bg,
-					sortTag: sortTag,
-					sortValue: repo.stargazers_count,
-				})
+					element: projectElement(
+						repo.html_url,
+						repo.name,
+						"CDN/ProjectIcons/Github/"+repo.name+".png",
+						repo.description,
+						"👀 " + repo.watchers_count + " ⭐ " + repo.stargazers_count,
+						"#1b1f24",
+						tags
+					),
+					tags: tags,
+					sortValue: repo.stargazers_count + (tags.includes(Tags.HYTALE) && hytaleSortBonus),
+				});
 			});
 	  	});
 	}).catch(err => console.error(err));
 }
 
-function addLink(info){
-	let bg = document.createElement("div");
-	bg.style = "--project-colour: #f16436;";
-	bg.classList = "projectBg";
+function loadProjects(filter){
+	let tempProjList = projectList
+		.filter((a) => !filter || a.tags.includes(filter));
 
-	let container = document.createElement("div");
-	container.classList = "project";
-	bg.appendChild(container);
-
-	let icon = document.createElement("img");
-	icon.src = info.icon;
-	icon.classList = "projectIcon";
-	container.appendChild(icon);
-
-	let link = document.createElement("a");
-	link.innerText = info.name;
-	link.href = info.link;
-	link.classList = "projectName";
-	container.appendChild(link);
-
-	let favicons = document.createElement("div");
-	favicons.classList = "projectFavicons";
-	container.appendChild(favicons);
-	for (let favicon of info.favicons){
-		favicons.appendChild(favicon.cloneNode());
-	}
-
-	let desc = document.createElement("p");
-	desc.innerText = info.description;
-	desc.classList = "projectDesc";
-	container.appendChild(desc);
-
-	projectList.push({
-		element: bg,
-		sortTag: info.sortTag,
-		sortValue: info.sortValue,
-	})
-}
-"a".charCodeAt(0)
-function loadProjects(){
-	projectList.sort((a, b) => {
-		if (b.sortTag != a.sortTag){
-			if (b.sortTag == "Hytale") return 1
-			else if (a.sortTag == "Hytale") return -1
-			else if (b.sortTag == "Minecraft") return 1
-			else if (a.sortTag == "Minecraft") return -1
-			else return b.sortTag.charCodeAt(0) - a.sortTag.charCodeAt(0)
-		}
-		else return b.sortValue - a.sortValue
-	})
-	for (let project of projectList)
-		projectSection.appendChild(project.element)
+	projectSection.replaceChildren();
+	for (let project of tempProjList)
+		projectSection.appendChild(project.element);
 }
 
 (async () => {
 	await fetchModrinth();
 	await fetchGithub();
-	addLink({
-		name: "Armed With Ammo",
-		description: "Adds ammo and makes guns functional!",
-		icon: "https://media.forgecdn.net/avatars/thumbnails/1630/269/256/256/639045278596288956.png",
-		link: "https://www.curseforge.com/hytale/mods/armed-with-ammo",
-		favicons: [hytaleFavicon, curseforgeFavicon],
-		sortTag: "Hytale",
-		sortValue: -1000000,
+	projectList.push({
+		element: projectElement(
+			"https://www.curseforge.com/hytale/mods/armed-with-ammo",
+			"Armed With Ammo",
+			"https://media.forgecdn.net/avatars/thumbnails/1630/269/256/256/639045278596288956.png",
+			"Adds ammo and makes guns functional!",
+			"",
+			"#f16436",
+			[Tags.CURSEFORGE, Tags.HYTALE]
+		),
+		tags: [Tags.CURSEFORGE, Tags.HYTALE],
+		sortValue: hytaleSortBonus,
 	});
+
+	projectList.sort((a, b) => b.sortValue - a.sortValue);
 	loadProjects();
 })();

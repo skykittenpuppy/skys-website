@@ -1,12 +1,12 @@
 @font-face {
     font-family: "icons";
-    src: url("icons.ttf") format("truetype");
+    src: url("CDN/Resources/icons.ttf") format("truetype");
 }
 
 html {
     position: fixed;
     top: 0; left: 0; bottom: 0; right: 0;
-    background-image: url("cloud.PNG");
+    background-image: url("CDN/Resources/cloud.PNG");
     background-position: center;
     background-size: cover;
     overflow: hidden;
